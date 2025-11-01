@@ -1,26 +1,112 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-prim: #0d1e20;
+  --color-midnight_text: #0c1e21;
+  --color-dark: #26667F;
+  --color-prim-light: #edf0f1;
+  --color-dark-blur: #0d1e20e0;
+  --color-border: #c9d1d1;
+  --color-pera-light: #a9b8b8;
+  --color-pera-dark: #364e52;
+
+  --rotate-y-360: 360px;
+
+  --text-13: 0.8125rem;
+  --text-13--line-height: 1.2;
+  --text-14: 0.875rem;
+  --text-14--line-height: 1.2;
+  --text-16: 1rem;
+  --text-16--line-height: 1.2;
+  --text-18: 1.125rem;
+  --text-18--line-height: 1.2;
+  --text-19: 1.1875rem;
+  --text-19--line-height: 1.8;
+  --text-20: 1.25rem;
+  --text-20--line-height: 1.2;
+  --text-22: 1.375rem;
+  --text-22--line-height: 1.2;
+  --text-24: 1.5rem;
+  --text-24--line-height: 1.2;
+  --text-25: 1.5625rem;
+  --text-25--line-height: 1.2;
+  --text-28: 1.75rem;
+  --text-28--line-height: 1.2;
+  --text-35: 2.1875rem;
+  --text-35--line-height: 1.2;
+  --text-40: 2.5rem;
+  --text-40--line-height: 1.2;
+  --text-48: 3rem;
+  --text-48--line-height: 1.2;
+  --text-50: 3.125rem;
+  --text-50--line-height: 1.2;
+  --text-60: 4.5rem;
+  --text-60--line-height: 1.2;
+
+  --tracking-widest: 0.2em;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor)
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .font-unbounded {
+    font-family: var(--font-unbounded)
+  }
+  .font-poppins {
+    font-family: var(--font-poppins)
+  }
+  .font-chakrapetch {
+    font-family: var(--font-chakrapetch)
+  }
+  .font-mona {
+    font-family: var(--font-mona)
+  }
+}
+
+@layer components {
+  body {
+    @apply text-base overflow-x-hidden font-normal;
+    -webkit-text-size-adjust: 100%;
+    font-family: var(--font-poppins);
+    scroll-behavior: smooth;
+  }
+
+  textarea,
+  input[type="text"],
+  input[type="number"],
+  input[type="email"],
+  input[type="tel"],
+  select {
+    @apply block outline-hidden text-base font-normal m-0 rounded-md w-full capitalize;
+  }
+
+  h1 {
+    @apply md:text-50 text-28 font-medium capitalize;
+  }
+
+  h2 {
+    @apply md:text-40 text-24 font-medium capitalize;
+  }
+
+  h3 {
+    @apply md:text-28 text-18 font-medium text-white capitalize;
+  }
+
+  h4 {
+    @apply text-24 font-medium capitalize;
+  }
+
+  h5 {
+    @apply text-22 font-medium capitalize;
+  }
+
+  
 }
