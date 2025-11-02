@@ -7,6 +7,7 @@ import { HeaderData } from './Navigation/menuData';
 import HeaderLink from './Navigation/headerLink';
 import Link from 'next/link';
 import { Icon } from "@iconify/react";
+import Sidebar from './Sidebar';
 
 const Header: React.FC = () => {
 
@@ -60,9 +61,31 @@ const Header: React.FC = () => {
                 className="bg-prim text-white rounded-full h-full w-[35px] p-1.5 group-hover:-rotate-45 transition-all duration-300"
               />
             </Link>
+
+            <button
+              onClick={() => setIsOpenSidebar(true)}
+              className='block p-2 cursor-pointer group'
+              aria-label="Toggle monile menu"
+            >
+              <span className='block w-6 h-0.5 bg-white'></span>
+              <span className='block w-4 h-0.5 bg-white mt-1.5 transition-all duration-300 ease-in-out group-hover:w-6'></span>
+              <span className='block w-6 h-0.5 bg-white mt-1.5'></span>
+            </button>
+
+            <button
+              onClick={() => setIsOpenSidebar(!navbarOpen)}
+              className='lg:hidden block p-2 cursor-pointer group'
+              aria-label="Toggle monile menu"
+            >
+              <span className='block w-6 h-0.5 bg-white'></span>
+              <span className='block w-4 h-0.5 bg-white mt-1.5 transition-all duration-300 ease-in-out group-hover:w-6'></span>
+              <span className='block w-6 h-0.5 bg-white mt-1.5'></span>
+            </button>
           </div>
         </div>
       </header>
+
+      <Sidebar isOpenSidebar={isOpenSidebar} setIsOpenSidebar={setIsOpenSidebar} />
     </>
   )
 }
