@@ -27,6 +27,52 @@ export const HeaderData: headerItem[] = [
         href: "/contact"
       }
     ]
+  },
+  {
+    label: "Services",
+    href: "#",
+    submenu: [
+      {
+        label: "Services List",
+        href: "/services"
+      },
+      {
+        label: "Services Details",
+        href: "/Services"
+      },
+    ]
+  },
+  {
+    label: "Portfolio",
+    href: "/portfolio",
+    submenu: [
+      {
+        label: "Portfolio",
+        href: "/portfolio"
+      },
+      {
+        label: "Portfolio Details",
+        href: "/portfolio"
+      },
+    ]
+  },
+  {
+    label: "Blog",
+    href: "/blog",
+    submenu: [
+      {
+        label: "Blog",
+        href: "/blog"
+      },
+      {
+        label: "Blog Details",
+        href: "/blog"
+      },
+    ]
+  },
+  {
+    label: "Contact",
+    href: "/contact"
   }
 ]
 
