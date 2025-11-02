@@ -5,6 +5,8 @@ import React, { useEffect, useRef, useState } from 'react'
 import Logo from './Logo';
 import { HeaderData } from './Navigation/menuData';
 import HeaderLink from './Navigation/headerLink';
+import Link from 'next/link';
+import { Icon } from "@iconify/react";
 
 const Header: React.FC = () => {
 
@@ -47,6 +49,18 @@ const Header: React.FC = () => {
               <HeaderLink key={index} item={item} />
             ))}
           </nav>
+
+          <div className='nva-right gap-4 hidden lg:flex items-center'>
+            <Link href="/contact" className="text-white bg-dark h-[50px] rounded-full font-chakrapetch font-semibold flex gap-2 ps-4 pe-2 py-2 w-auto justify-center items-center tracking-wider group">
+              Let&apos;s Talk
+              <Icon 
+                icon="tabler:arrow-right" 
+                width="24" 
+                height="24" 
+                className="bg-prim text-white rounded-full h-full w-[35px] p-1.5 group-hover:-rotate-45 transition-all duration-300"
+              />
+            </Link>
+          </div>
         </div>
       </header>
     </>
