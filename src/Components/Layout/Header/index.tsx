@@ -8,6 +8,7 @@ import HeaderLink from './Navigation/headerLink';
 import Link from 'next/link';
 import { Icon } from "@iconify/react";
 import Sidebar from './Sidebar';
+import { RiCloseFill } from "react-icons/ri";
 
 const Header: React.FC = () => {
 
@@ -51,8 +52,12 @@ const Header: React.FC = () => {
             ))}
           </nav>
 
+          {/* Button Lets Talk */}
           <div className='nva-right gap-4 hidden lg:flex items-center'>
-            <Link href="/contact" className="text-white bg-dark h-[50px] rounded-full font-chakrapetch font-semibold flex gap-2 ps-4 pe-2 py-2 w-auto justify-center items-center tracking-wider group">
+            <button 
+              onClick={() => setIsOpenSidebar(true)} 
+              className="text-white bg-dark h-[50px] rounded-full font-chakrapetch font-semibold flex gap-2 ps-4 pe-2 py-2 w-auto justify-center items-center tracking-wider group"
+            >
               Let&apos;s Talk
               <Icon 
                 icon="tabler:arrow-right" 
@@ -60,30 +65,41 @@ const Header: React.FC = () => {
                 height="24" 
                 className="bg-prim text-white rounded-full h-full w-[35px] p-1.5 group-hover:-rotate-45 transition-all duration-300"
               />
-            </Link>
-
-            <button
-              onClick={() => setIsOpenSidebar(true)}
-              className='block p-2 cursor-pointer group'
-              aria-label="Toggle monile menu"
-            >
-              <span className='block w-6 h-0.5 bg-white'></span>
-              <span className='block w-4 h-0.5 bg-white mt-1.5 transition-all duration-300 ease-in-out group-hover:w-6'></span>
-              <span className='block w-6 h-0.5 bg-white mt-1.5'></span>
-            </button>
-
-            <button
-              onClick={() => setIsOpenSidebar(!navbarOpen)}
-              className='lg:hidden block p-2 cursor-pointer group'
-              aria-label="Toggle monile menu"
-            >
-              <span className='block w-6 h-0.5 bg-white'></span>
-              <span className='block w-4 h-0.5 bg-white mt-1.5 transition-all duration-300 ease-in-out group-hover:w-6'></span>
-              <span className='block w-6 h-0.5 bg-white mt-1.5'></span>
             </button>
           </div>
+
+          {/* Mobile Menu Button*/}
+          <button
+            onClick={() => setNavbarOpen(!navbarOpen)}
+            className='lg:hidden block p-2 cursor-pointer group'
+            aria-label="Toggle mobile menu"
+          >
+            <span className='block w-6 h-0.5 bg-white'></span>
+            <span className='block w-4 h-0.5 bg-white mt-1.5 transition-all duration-300 ease-in-out group-hover:w-6'></span>
+            <span className='block w-6 h-0.5 bg-white mt-1.5'></span>
+          </button>
         </div>
       </header>
+
+      <div 
+        ref={mobileMenuRef}
+        className={`
+          lg:hidden fixed top-0 right-0 h-screen w-full sm:w-[50%] lg:w-[40%] shadow-2xl bg-dark-blur backdrop-blur-lg p-10   
+          z-50 transform transition-transform overflow-y-scroll duration-500 ease-in-out
+          ${navbarOpen ? "translate-x-0" : "translate-x-[110%]"}
+        `}
+      >
+        <div className='tex-white flex justify-between items-center w-full'>
+          <Logo />
+
+          <button 
+            onClick={() => setNavbarOpen(!navbarOpen)}
+            aria-label="Close mobile menu"
+          >
+            <RiCloseFill />
+          </button>
+        </div>
+      </div>
 
       <Sidebar isOpenSidebar={isOpenSidebar} setIsOpenSidebar={setIsOpenSidebar} />
     </>
