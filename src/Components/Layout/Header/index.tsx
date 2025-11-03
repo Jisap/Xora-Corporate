@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { Icon } from "@iconify/react";
 import Sidebar from './Sidebar';
 import { RiCloseFill } from "react-icons/ri";
+import MobileHeaderLink from './Navigation/mobileHeaderLinks';
 
 const Header: React.FC = () => {
 
@@ -81,6 +82,7 @@ const Header: React.FC = () => {
         </div>
       </header>
 
+      {/* Mobile Menu Content*/}
       <div 
         ref={mobileMenuRef}
         className={`
@@ -90,15 +92,23 @@ const Header: React.FC = () => {
         `}
       >
         <div className='tex-white flex justify-between items-center w-full'>
-          <Logo />
+          <div className='text-white'>
+            <Logo />
+          </div>
 
           <button 
             onClick={() => setNavbarOpen(!navbarOpen)}
             aria-label="Close mobile menu"
           >
-            <RiCloseFill />
+            <RiCloseFill className='text-white'/>
           </button>
         </div>
+
+        <nav className='flex flex-col items-start py-4'>
+          {HeaderData.map((item, index) => (
+            <MobileHeaderLink key={index} item={item} />
+          ))}
+        </nav>
       </div>
 
       <Sidebar isOpenSidebar={isOpenSidebar} setIsOpenSidebar={setIsOpenSidebar} />
