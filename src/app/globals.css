@@ -108,6 +108,35 @@
   h5 {
     @apply text-22 font-medium capitalize;
   }
+}
 
-  
+.prim-gradient {
+  background: linear-gradient(-45deg, rgba(30,138,138,0.3) 0%, rgba(30,138,138,0) 50%, rgba(30,138,138,0.3) 100%);
+}
+
+.flip-vertical {
+  animation: flip-vertical 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.995) both;
+}
+
+@keyframes flip-vertical {
+  0% {
+    transform: translateZ(0) rotateY(0)
+  }
+  100% {
+    transform: translateZ(160px) rotateY(180deg)
+  }
+}
+
+.submenu {
+  background-color: #fff !important;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 100% !important;
+    margin: 0 !important;
+    left: 0;
+    top: 0;
+    border-radius: 0;
+  }
 }
