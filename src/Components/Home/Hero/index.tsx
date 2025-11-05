@@ -21,7 +21,7 @@ const Hero:FC = () => {
           />
         </div>
 
-        <div className='container mx-auto lg:max-w-(--breakpoint-xl) md:max-w-(--breakpoint-md) z-20 relative text-white px-4 h-full flex flex-col justify-center items-start'>
+        <div className='container mx-auto lg:max-w-[--breakpoint-xl] md:max-w-[--breakpoint-md] z-20 relative text-white px-4 h-full flex flex-col justify-center items-start'>
           <div className="hero-content text-white">
             <h2 className='md:text-60 sm:text-40 text-28 text-white mb-9 lg:mb-3 w-full lg:w-3/4'>
               Transforming Ideas Into Reality

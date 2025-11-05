@@ -10,6 +10,9 @@
   --color-pera-light: #a9b8b8;
   --color-pera-dark: #364e52;
 
+  --breakpoint-xl: 1280px;
+  --breakpoint-md: 768px;
+
   --rotate-y-360: 360px;
 
   --text-13: 0.8125rem;
