@@ -41,6 +41,27 @@ const Hero:FC = () => {
             </Link>
           </div>
         </div>
+
+        <div className="absolute w-[320px] h-[320px] rounded-full bg-dark opacity-80 blur-[80px] -left-[50px] -bottom-[50px]"></div>
+      
+        <div className="solution-box absolute lg:block hidden lg:bottom-5 bottom-0 lg:right-5 right-0 bg-white/10 backdrop-blur-sm p-8 max-w-md rounded-md z-10">
+          <Icon 
+            icon="tdesign:quote-filled"
+            width="60"
+            height="60"
+            className='text-white'
+          />
+
+          <p className='text-white pt-3 pb-8'>
+            Commited to delivering innovative solutions that drive success. With a focus on quality.
+          </p>
+
+          <div className="hero-counter text-7xl font-medium text-white font-unbounded">
+            <span className='counter'>10</span>
+            <span className='count-plus'>M</span>+
+            <sup></sup>
+          </div>
+        </div>
       </div>
     </>
   )
