@@ -18,7 +18,7 @@ const Solution: FC = () => {
   return (
     <>
       <section className='bg-light overflow-hidden py-14 lg:py-18 xl:py-22 bg-prim-light'>
-        <div className="container mx-auto lg:max-w-[--break-point-xl] md:max-w-[--breakpoint-md] px-4 space-y-14">
+        <div className="container mx-auto lg:max-w-[--breakpoint-xl] md:max-w-[--breakpoint-md] px-4 space-y-14">
           <div className='solution-content flex justify-between items-start lg:items-end gap-2 flex-col lg:flex-row'>
             <div>
               <span className='sub-title text-14 bg-prim text-white py-1 rounded-xl relative font-chakrapetch capitalize ps-5 pe-3'>
@@ -32,7 +32,7 @@ const Solution: FC = () => {
 
             <Link
               href="/services"
-              className='text-white bg-dark h-[50px] text-16 lg:text-sm w-fit rounded-full font-chakrapetch font-semibold flex gap-2 ps-4 pe-2 py-2 justify-center items-center tracking-wider group'
+              className='text-white bg-dark h-[50px] lg:text-16 text-sm w-fit rounded-full font-chakrapetch font-semibold flex gap-2 ps-4 pe-2 py-2 justify-center items-center tracking-wider group'
             >
               Explore More
               <Icon
@@ -80,6 +80,23 @@ const Solution: FC = () => {
                       
                       />
                     </div>
+
+                    <p className='text-pera-dark font-normal group-hover:text-white transition-colors duration-500'>
+                      {solution.description}
+                    </p>
+
+                    <Link
+                      href="/about"
+                      className='text-dark h-[50px] lg:text-16 text-sm w-fit rounded-full font-chakrapetch font-semibold flex gap-2 ps-4 pe-2 py-2 justify-center items-center tracking-wider group group-hover:text-white'
+                    >
+                      Learn More
+                      <Icon
+                        icon="tabler:arrow-right"
+                        width="24"
+                        height="24"
+                        className='bg-prim text-white rounded-full h-full w-[35px] p-1.5 group-hover:-rotate-45 group-hover:bg-white group-hover:text-dark tansition-all duration-300'
+                      />
+                    </Link>
                   </div>
                 </SwiperSlide>
               ))}
