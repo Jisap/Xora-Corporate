@@ -26,5 +26,48 @@ export const solutionData = [
     icon: "mdi:school",
     description: "Equip your teams with skills and knowledge tailored to your corporate goals"
   }
+]
 
+// Data for companies, assuming images are in the /images/ directory
+export const companies = [
+  {
+    name: "Company 1",
+    image: "/images/companies/brand-1.webp"
+  },
+  {
+    name: "Company 2",
+    image: "/images/companies/brand-2.webp"
+  },
+  {
+    name: "Company 3",
+    image: "/images/companies/brand-3.webp"
+  },
+  {
+    name: "Company 4",
+    image: "/images/companies/brand-4.webp"
+  },
+  {
+    name: "Company 5",
+    image: "/images/companies/brand-5.webp"
+  },
+  {
+    name: "Company 1",
+    image: "/images/companies/brand-1.webp"
+  },
+  {
+    name: "Company 2",
+    image: "/images/companies/brand-2.webp"
+  },
+  {
+    name: "Company 3",
+    image: "/images/companies/brand-3.webp"
+  },
+  {
+    name: "Company 4",
+    image: "/images/companies/brand-4.webp"
+  },
+  {
+    name: "Company 5",
+    image: "/images/companies/brand-5.webp"
+  }
 ]
