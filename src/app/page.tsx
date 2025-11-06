@@ -1,3 +1,4 @@
+import Commitment from "@/Components/Home/Commitment";
 import Companies from "@/Components/Home/Companies";
 import Hero from "@/Components/Home/Hero";
 import Solution from "@/Components/Home/Solution";
@@ -10,6 +11,7 @@ export default function Home() {
         <Hero />
         <Solution />
         <Companies />
+        <Commitment />
       </main>
     </>
   );
