@@ -71,3 +71,13 @@ export const companies = [
     image: "/images/companies/brand-5.webp"
   }
 ]
+
+export const tags = [
+  "Growth",
+  "Success",
+  "Innovate",
+  "Lead",
+  "Impact",
+  "Focus",
+  "Tech"
+]

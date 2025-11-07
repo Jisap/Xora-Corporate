@@ -26,10 +26,7 @@ const Companies:FC = () => {
             </div>
           </div>
 
-          <div className="relative mt-10
-            before:content-[''] before:absolute before:top-0 before:left-0 before:w-24 before:h-full before:bg-linear-to-r before:from-prim-light before:to-transparent before:z-10
-            after:content-[''] after:absolute after:top-0 after:right-0 after:w-24 after:h-full after:bg-linear-to-l after:from-prim-light after:to-transparent after:z-10
-          ">
+          <div className="relative mt-10 swiper-fade-out">
             <Swiper 
               modules={[Autoplay]}
               spaceBetween={30}

@@ -9,6 +9,7 @@ import "swiper/css/autoplay"
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { tags } from '@/app/api/data'
 
 
 
@@ -44,9 +45,9 @@ const Commitment: FC = () => {
             </Link>
           </div>
 
-          <div className='grid gap-8 grid-cols-1 lg:grid-cols-2 xl:grid-cols-3'>
+          <div className='grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
             <div className='w-full bg-white p-8 rounded-2xl'>
-              <h2 className='font-chakrapetch lg:text-24 font-semibold mb-5'>
+              <h2 className='font-chakrapetch text-20 lg:text-24 font-semibold mb-5'>
                 Rebranding Strategy for a Growing
               </h2>
 
@@ -73,6 +74,54 @@ const Commitment: FC = () => {
                   className="object-cover w-[100px] h-[100px] rounded-full border-4 border-white shadow-xl -translate-x-3 z-0"
                 />
               </div>
+
+              <div className='flex gap-5'>
+                <span className="text-5xl font-semibold">200</span>
+                <p className='text-pera-dark flex justify-center items-center'>
+                  Satisfied customers work with our axora.
+                </p>
+              </div>
+            </div>
+
+            <div className='w-full bg-white p-8 rounded-2xl'>
+              <h2 className='font-chakrapetch text-20 lg:text-24 font-semibold mb-5'>
+                Evaluating the Strategy to Achieve the Goals
+              </h2>
+
+              <div className='w-full h-[230px]'>
+                <Image 
+                  src="/images/commitment/strategy-chart.webp"
+                  alt="strategy-chart"
+                  width={350}
+                  height={350}
+                  className='w-full h-full object-contain mx-auto'
+                />
+              </div>
+            </div>
+
+            <div className='w-full bg-white p-8 rounded-2xl flex flex-col justify-between items-start md:col-span-2 lg:col-span-1'>
+              <div className='mb-8'>
+                <h2 className='font-chakrapetch text-20 lg:text-24 font-semibold pb-1'>
+                  Evaluating the Strategy to Achieve the Goals
+                </h2>
+
+                <p className=''>
+                  Our team are always available to addressed our concerns, providing quick solution.
+                </p>
+              </div>
+
+              <ul className='flex flex-wrap gap-3 w-full'>
+                {tags.map((tag, index) => (
+                  <li 
+                    key={index} 
+                    className='border border-white rounded-md overflow-hidden cursor-pointer'
+                  >
+                    <span className="bg-black/10 backdrop-blur-sm px-3 py-1 inline-block text-sm font-medium">
+                      {tag}
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
