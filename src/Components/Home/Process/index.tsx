@@ -50,7 +50,7 @@ const Process: FC = () => {
             </Link>
           </div>
 
-          <div className='process-wrapper grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4'>
+          <div className='process-wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
             <div className='process-item bg-white shadow-xl rounded-lg p-8 relative'>
               <span className='font-unbounded'>01</span>
               <h4 className='font-chakrapetch font-semibold pb-3'>
@@ -59,6 +59,12 @@ const Process: FC = () => {
               <p className='text-16 text-pera-dark'>
                 The first step in out process is understanding your uniques business needs, objetives, and out customes challenges.
               </p>
+              <Icon
+                icon="si:arrow-right-duotone"
+                width="24"
+                height="24"
+                className='hidden xl:inline-flex items-center justify-center'
+              />
             </div>
 
             <div className='process-item bg-white shadow-xl rounded-lg p-8 relative'>
@@ -67,7 +73,23 @@ const Process: FC = () => {
                 Execution & Delivery
               </h4>
               <p className='text-16 text-pera-dark'>
-                The first step in out process is understanding your uniques business needs, objetives, and out customes challenges.
+                Once the plan is in place, our team moves forward with execution, turning strategies into action to delivery
+              </p>
+              <Icon 
+                icon="si:arrow-right-duotone" 
+                width="24"
+                height="24"
+                className='hidden xl:inline-flex items-center justify-center'  
+              />
+            </div>
+
+            <div className='process-item bg-white shadow-xl rounded-lg p-8 relative md:col-span-2 lg:col-span-1'>
+              <span className='font-unbounded'>03</span>
+              <h4 className='font-chakrapetch font-semibold pb-3'>
+                Discovery & Planning
+              </h4>
+              <p className='text-16 text-pera-dark'>
+                After project completion, we conduct a thorough review to ensuer everything alingns with your goals and requeriments.
               </p>
             </div>
           </div>
