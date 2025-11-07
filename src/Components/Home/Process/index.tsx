@@ -19,7 +19,7 @@ const Process: FC = () => {
     <>
       <section className='bg-light overflow-hidden py-14 lg:py-18 xl:py-22 bg-prim-light'>
         <div className="container mx-auto lg:max-w-[--breakpoint-xl] md:max-w-[--breakpoint-md] px-4 space-y-14">
-          <div className='solution-content flex justify-between items-start lg:items-end gap-2 flex-col lg:flex-row'>
+          <div className='porcess-content flex justify-between items-start lg:items-end gap-2 flex-col lg:flex-row'>
             <div>
               <span className='sub-title text-14 bg-prim text-white py-1 rounded-xl relative font-chakrapetch capitalize ps-5 pe-3'>
                 Our Process
@@ -49,8 +49,29 @@ const Process: FC = () => {
               />
             </Link>
           </div>
-        </div>
 
+          <div className='process-wrapper grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4'>
+            <div className='process-item bg-white shadow-xl rounded-lg p-8 relative'>
+              <span className='font-unbounded'>01</span>
+              <h4 className='font-chakrapetch font-semibold pb-3'>
+                Discovery & Planning
+              </h4>
+              <p className='text-16 text-pera-dark'>
+                The first step in out process is understanding your uniques business needs, objetives, and out customes challenges.
+              </p>
+            </div>
+
+            <div className='process-item bg-white shadow-xl rounded-lg p-8 relative'>
+              <span className='font-unbounded'>02</span>
+              <h4 className='font-chakrapetch font-semibold pb-3'>
+                Execution & Delivery
+              </h4>
+              <p className='text-16 text-pera-dark'>
+                The first step in out process is understanding your uniques business needs, objetives, and out customes challenges.
+              </p>
+            </div>
+          </div>
+        </div>
 
       </section>
     </>

@@ -221,3 +221,35 @@
     @apply content-[''] absolute top-0 right-0 z-10 h-full w-24 bg-gradient-to-l from-prim-light to-transparent;
   }
 }
+
+.process-item  span {
+  font-size: 120px;
+  color: var(--color-prim);
+  background: linear-gradient(180deg, var(--color-prim) 0%, #fff 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  display: inline-flex;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.process-item svg {
+  position: absolute;
+  font-size: 12px;
+  line-height: 1;
+  color: var(--color-prim);
+  font-family: "bexon-icons" !important;
+  font-weight: normal;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background-color: white;
+  border: 7px solid #e6e8e8;
+  top: 50%;
+  inset-inline-end: -34px;
+  transform: translateY(-50%);
+  z-index: 5;
+  transition: none;
+}
