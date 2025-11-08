@@ -81,3 +81,48 @@ export const tags = [
   "Focus",
   "Tech"
 ]
+
+export const projects = [
+  {
+    image: "/images/projects/project-01.jpg",
+    category: "Business Strategy",
+    title: "Strategic Growth Plan for a Tech Startup",
+    description: "We developed a comprehensive business strategy that resulted in a 200% increase in user acquisition within the first six months.",
+    link: "/projects/strategic-growth"
+  },
+  {
+    image: "/images/projects/project-02.jpg",
+    category: "Sustainability & ESG",
+    title: "ESG Framework for a Multinational Corporation",
+    description: "Our team implemented a robust ESG framework, improving the company's sustainability ratings and attracting socially responsible investors.",
+    link: "/projects/esg-framework"
+  },
+  {
+    image: "/images/projects/project-03.jpg",
+    category: "Customer Engagement",
+    title: "Revamping the Customer Journey for a Retail Brand",
+    description: "By redesigning the customer journey, we helped a major retail brand increase customer satisfaction by 40% and boost loyalty.",
+    link: "/projects/customer-journey"
+  },
+  {
+    image: "/images/projects/project-01.jpg",
+    category: "Business Strategy",
+    title: "Strategic Growth Plan for a Tech Startup",
+    description: "We developed a comprehensive business strategy that resulted in a 200% increase in user acquisition within the first six months.",
+    link: "/projects/strategic-growth"
+  },
+  {
+    image: "/images/projects/project-02.jpg",
+    category: "Sustainability & ESG",
+    title: "ESG Framework for a Multinational Corporation",
+    description: "Our team implemented a robust ESG framework, improving the company's sustainability ratings and attracting socially responsible investors.",
+    link: "/projects/esg-framework"
+  },
+  {
+    image: "/images/projects/project-03.jpg",
+    category: "Customer Engagement",
+    title: "Revamping the Customer Journey for a Retail Brand",
+    description: "By redesigning the customer journey, we helped a major retail brand increase customer satisfaction by 40% and boost loyalty.",
+    link: "/projects/customer-journey"
+  },
+]
