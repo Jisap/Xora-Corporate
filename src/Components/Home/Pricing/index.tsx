@@ -289,7 +289,7 @@ const Pricing = () => {
             </div>
 
             {/* Premium Plan */}
-            <div className="bg-white pt-8 px-8 rounded-2xl shadow hover:shadow-lg transition">
+            <div className="bg-white pt-8 px-8 rounded-2xl shadow hover:shadow-lg transition md:col-span-2 lg:col-span-1">
               <h3 className="text-22 font-bold text-start text-black font-chakrapetch">
                 Premium Plan
               </h3>
