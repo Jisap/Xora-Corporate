@@ -150,3 +150,39 @@ export const testimonial = [
     position: "Jefe de Sostenibilidad en Empresa C"
   }
 ];
+
+export const blogs = [
+  {
+    id: 1,
+    image: "/images/blog/blog-1.jpg",
+    name: "Post sobre Estrategia de Negocios",
+    date: "15 Ene, 2024",
+    category: "Estrategia",
+    author: "John Doe",
+    title: "Estrategias de Negocios Resilientes para el 2024",
+    description: "En un panorama empresarial en constante cambio, la resiliencia es una necesidad. Descubre cómo construir una estrategia que pueda resistir y prosperar.",
+    slug: "navegando-incertidumbre-2024"
+  },
+  {
+    id: 2,
+    image: "/images/blog/blog-2.jpg",
+    name: "Post sobre Sostenibilidad",
+    date: "22 Feb, 2024",
+    category: "Sostenibilidad",
+    author: "Jane Smith",
+    title: "Integrando Prácticas ESG en tu Modelo de Negocio",
+    description: "Las consideraciones ESG están remodelando la inversión y la lealtad del consumidor. Aprende a integrar estas prácticas de manera efectiva.",
+    slug: "futuro-verde-esg"
+  },
+  {
+    id: 3,
+    image: "/images/blog/blog-3.jpg",
+    name: "Post sobre Engagement del Cliente",
+    date: "30 Mar, 2024",
+    category: "Clientes",
+    author: "Alex Johnson",
+    title: "Creando un Customer Engagement Significativo",
+    description: "La lealtad del cliente se construye con cada interacción. Explora técnicas innovadoras para fomentar una conexión más profunda con tu audiencia.",
+    slug: "creando-customer-engagement"
+  }
+];
