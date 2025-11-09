@@ -8,7 +8,7 @@ import Process from "@/Components/Home/Process";
 import Projects from "@/Components/Home/Projects";
 import Solution from "@/Components/Home/Solution";
 import Testimonials from "@/Components/Home/Testimonials.tsx";
-import Image from "next/image";
+
 
 export default function Home() {
   return (
@@ -23,7 +23,6 @@ export default function Home() {
         <Testimonials />
         <Pricing />
         <Blog />
-        <Footer />
       </main>
     </>
   );
