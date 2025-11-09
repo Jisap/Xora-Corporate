@@ -4,6 +4,7 @@ import Hero from "@/Components/Home/Hero";
 import Process from "@/Components/Home/Process";
 import Projects from "@/Components/Home/Projects";
 import Solution from "@/Components/Home/Solution";
+import Testimonials from "@/Components/Home/Testimonials.tsx";
 import Image from "next/image";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
         <Commitment />
         <Process />
         <Projects />
+        <Testimonials />
       </main>
     </>
   );
