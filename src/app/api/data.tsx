@@ -126,3 +126,27 @@ export const projects = [
     link: "/projects/customer-journey"
   },
 ]
+
+export const testimonial = [
+  {
+    id: 1,
+    text: "Trabajar con Axora ha cambiado las reglas del juego para nuestro negocio. Sus conocimientos estratégicos y su enfoque práctico nos ayudaron a navegar en un mercado complejo y a lograr un crecimiento notable. No podríamos estar más contentos con los resultados.",
+    image: "/images/testimonials/user.jpg",
+    name: "Juan Pérez",
+    position: "CEO de Empresa A"
+  },
+  {
+    id: 2,
+    text: "El equipo de Axora es increíblemente experto y dedicado. Se tomaron el tiempo para comprender nuestros desafíos únicos y ofrecieron una solución personalizada que superó nuestras expectativas. Recomiendo encarecidamente sus servicios.",
+    image: "/images/testimonials/user2.jpg",
+    name: "Juan García",
+    position: "Director de Marketing en Empresa B"
+  },
+  {
+    id: 3,
+    text: "La experiencia de Axora en sostenibilidad y ESG ha sido inestimable para nuestra organización. Nos ayudaron a desarrollar e implementar una estrategia integral que no solo ha mejorado nuestras calificaciones de sostenibilidad, sino que también ha atraído a inversores socialmente responsables.",
+    image: "/images/testimonials/user3.jpg",
+    name: "Carlos Rodríguez",
+    position: "Jefe de Sostenibilidad en Empresa C"
+  }
+];
