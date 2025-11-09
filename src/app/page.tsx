@@ -1,6 +1,7 @@
 import Commitment from "@/Components/Home/Commitment";
 import Companies from "@/Components/Home/Companies";
 import Hero from "@/Components/Home/Hero";
+import Pricing from "@/Components/Home/Pricing";
 import Process from "@/Components/Home/Process";
 import Projects from "@/Components/Home/Projects";
 import Solution from "@/Components/Home/Solution";
@@ -18,6 +19,7 @@ export default function Home() {
         <Process />
         <Projects />
         <Testimonials />
+        <Pricing />
       </main>
     </>
   );
