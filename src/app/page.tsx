@@ -1,3 +1,4 @@
+import Blog from "@/Components/Home/Blog";
 import Commitment from "@/Components/Home/Commitment";
 import Companies from "@/Components/Home/Companies";
 import Hero from "@/Components/Home/Hero";
@@ -20,6 +21,7 @@ export default function Home() {
         <Projects />
         <Testimonials />
         <Pricing />
+        <Blog />
       </main>
     </>
   );
