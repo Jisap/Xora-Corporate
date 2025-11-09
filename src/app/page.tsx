@@ -1,6 +1,7 @@
 import Blog from "@/Components/Home/Blog";
 import Commitment from "@/Components/Home/Commitment";
 import Companies from "@/Components/Home/Companies";
+import Footer from "@/Components/Home/Footer";
 import Hero from "@/Components/Home/Hero";
 import Pricing from "@/Components/Home/Pricing";
 import Process from "@/Components/Home/Process";
@@ -22,6 +23,7 @@ export default function Home() {
         <Testimonials />
         <Pricing />
         <Blog />
+        <Footer />
       </main>
     </>
   );
