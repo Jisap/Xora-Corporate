@@ -186,3 +186,47 @@ export const blogs = [
     slug: "creando-customer-engagement"
   }
 ];
+
+
+export const footerLinks = [
+  {
+    title: "Services",
+    links: [
+      { title: "Customer Experience", href: "#" },
+      { title: "Training Programs", href: "#" },
+      { title: "Business Strategy", href: "#" },
+      { title: "Sustainability & ESG", href: "#" },
+      { title: "Customer Engagement", href: "#" },
+      { title: "Development Hub", href: "#" }
+    ]
+  },
+  {
+    title: "Resources",
+    links: [
+      { title: "Contact us", href: "/contact" },
+      { title: "Team Member", href: "/team" },
+      { title: "Recognitions", href: "/recognitions" },
+      { title: "Careers", href: "/careers" },
+      { title: "News", href: "/news" },
+      { title: "Feedback", href: "/contact" }
+    ]
+  },
+];
+
+export const footerLinks2 = [
+  {
+    id: 1,
+    title: "Privacy",
+    link: "#"
+  },
+  {
+    id: 2,
+    title: "Security",
+    link: "#"
+  },
+  {
+    id: 3,
+    title: "Disclaimer",
+    link: "#"
+  }
+]
