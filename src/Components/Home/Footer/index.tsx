@@ -12,7 +12,7 @@ const Footer = () => {
     <>
       <footer className="pt-10 relative bg-white">
         <div className="container mx-auto px-4 max-w-screen-xl">
-          <div className="flex flex-col lg:flex-row justify-between lg:items-center border-b pb-10 mb-10 gap-6">
+          <div className="flex flex-col items-center lg:flex-row justify-between lg:items-center border-b pb-10 mb-10 gap-6">
             <div className="flex flex-wrap md:flex-nowrap gap-6">
               <div className="flex items-start text-[15px]">
                 <Icon 
