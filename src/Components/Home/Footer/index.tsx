@@ -12,12 +12,12 @@ const Footer = () => {
     <>
       <footer className="pt-10 relative bg-white">
         <div className="container mx-auto px-4 max-w-screen-xl">
-          <div className="flex flex-col items-center lg:flex-row justify-between lg:items-center border-b pb-10 mb-10 gap-6">
-            <div className="flex flex-wrap md:flex-nowrap gap-6">
-              <div className="flex items-start text-[15px]">
-                <Icon 
+          <div className="flex flex-col lg:flex-row justify-between lg:items-center border-b pb-10 mb-10 gap-8">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap lg:flex-nowrap gap-6">
+              <div className="flex items-start text-[15px] min-w-[200px]">
+                <Icon
                   icon="weui:location-outlined"
-                  className="size-6 mr-3 mt-1"
+                  className="size-6 mr-3 mt-1 flex-shrink-0"
                 />
 
                 <div className="flex flex-col">
@@ -29,7 +29,7 @@ const Footer = () => {
               <div className="flex items-center gap-2 text-[15px]">
                 <Icon
                   icon="majesticons:phone-retro-line"
-                  className="size-6"
+                  className="size-6 flex-shrink-0"
                 />
 
                 <Link href="#" className="text-[15px] hover-text-prim">
@@ -40,7 +40,7 @@ const Footer = () => {
               <div className="flex items-center gap-2 text-[15px]">
                 <Icon
                   icon="clarity:email-line"
-                  className="size-6"
+                  className="size-6 flex-shrink-0"
                 />
 
                 <Link href="#" className="text-[15px] hover-text-prim">
@@ -49,45 +49,45 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="flex gap-4">
-              <Link 
+            <div className="flex gap-4 lg:gap-3">
+              <Link
                 href="https://www.facebook.com"
-                className="text-muted hover:text-dark transition-colors"  
+                className="text-muted hover:text-dark transition-colors"
               >
-                <Icon 
+                <Icon
                   icon="fe:facebook"
                   width="28"
                   height="28"
                 />
               </Link>
-              
-              <Link 
+
+              <Link
                 href="https://www.x.com"
-                className="text-muted hover:text-dark transition-colors"  
+                className="text-muted hover:text-dark transition-colors"
               >
-                <Icon 
+                <Icon
                   icon="fa6-brands:square-twitter"
                   width="28"
                   height="28"
                 />
               </Link>
 
-              <Link 
+              <Link
                 href="https://www.linkedin.com"
-                className="text-muted hover:text-dark transition-colors"  
+                className="text-muted hover:text-dark transition-colors"
               >
-                <Icon 
+                <Icon
                   icon="fa6-brands:linkedin"
                   width="28"
                   height="28"
                 />
               </Link>
 
-              <Link 
+              <Link
                 href="https://www.youtube.com"
-                className="text-muted hover:text-dark transition-colors"  
+                className="text-muted hover:text-dark transition-colors"
               >
-                <Icon 
+                <Icon
                   icon="cbi:youtube-alt"
                   width="30"
                   height="30"
@@ -193,9 +193,9 @@ const Footer = () => {
 
           <div className="flex flex-col sm:flex-row justify-between items-center border-t mt-10 pt-6 text-center sm:text-left">
             <p className="text-[15px] font-poppins mb-3 sm:mb-0">
-              &copy; 2025 Axora Corporation. All rights reserved by {" "}
+              &copy; 2025 Axora Corp. All rights reserved by {" "}
               <Link href="#" className="hover:text-prim hover:underline">
-                Axora Corporation
+                Axora Corp.
               </Link>
             </p>
 
