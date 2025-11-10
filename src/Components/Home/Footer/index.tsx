@@ -47,6 +47,52 @@ const Footer = () => {
                 </Link>
               </div>
             </div>
+
+            <div className="flex gap-4">
+              <Link 
+                href="https://www.facebook.com"
+                className="text-muted hover:text-dark transition-colors"  
+              >
+                <Icon 
+                  icon="fe:facebook"
+                  width="28"
+                  height="28"
+                />
+              </Link>
+              
+              <Link 
+                href="https://www.x.com"
+                className="text-muted hover:text-dark transition-colors"  
+              >
+                <Icon 
+                  icon="fa6-brands:square-twitter"
+                  width="28"
+                  height="28"
+                />
+              </Link>
+
+              <Link 
+                href="https://www.linkedin.com"
+                className="text-muted hover:text-dark transition-colors"  
+              >
+                <Icon 
+                  icon="fa6-brands:linkedin"
+                  width="28"
+                  height="28"
+                />
+              </Link>
+
+              <Link 
+                href="https://www.youtube.com"
+                className="text-muted hover:text-dark transition-colors"  
+              >
+                <Icon 
+                  icon="cbi:youtube-alt"
+                  width="30"
+                  height="30"
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </footer>
