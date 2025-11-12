@@ -1,5 +1,6 @@
 "use client"
 
+import { team } from "@/app/api/data"
 import { Icon } from "@iconify/react"
 import Image from "next/image"
 import Link from "next/link"
@@ -77,6 +78,25 @@ const Team: FC<TeamProps> = ({ limit }) => {
                     />
                   </Link>
                 </div>
+              </div>
+
+              <div className="team-content flex justify-between items-start gap-2 pt-2">
+                <div>
+                  <h4 className="font-unbounded text-xl">
+                    {member.name}
+                  </h4>
+
+                  <span>
+                    {member.post}
+                  </span>
+                </div>
+
+                <Icon 
+                  icon="humbleicons:at-symbol"
+                  width={30}
+                  height={30}
+                  className="bg-white p-1 rounded-full"
+                />
               </div>
             </div>
           ))}

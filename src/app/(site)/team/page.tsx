@@ -25,7 +25,7 @@ const page = () => {
         breadcrumbLinks={breadcrumbLinks}
       />
       
-      <Team limit={3}/>
+      <Team limit={4}/>
 
     </>
   )

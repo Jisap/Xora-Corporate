@@ -187,6 +187,58 @@ export const blogs = [
   }
 ];
 
+export const team = [
+  {
+    id: 1,
+    name: "Johnathan P.",
+    post: "CEO & Founder",
+    image: "/images/team/team-1.webp"
+  },
+  {
+    id: 2,
+    name: "Benjamin C.",
+    post: "Chief Technology Officer",
+    image: "/images/team/team-2.webp"
+  },
+  {
+    id: 3,
+    name: "Eleanor R.",
+    post: "Lead Designer",
+    image: "/images/team/team-3.webp"
+  },
+  {
+    id: 4,
+    name: "Isabella M.",
+    post: "Marketing Director",
+    image: "/images/team/team-4.webp"
+  },
+  {
+    id: 5,
+    name: "Johnathan P.",
+    post: "CEO & Founder",
+    image: "/images/team/team-5.webp"
+  },
+  {
+    id: 6,
+    name: "Eleanor R.",
+    post: "Chief Technology Officer",
+    image: "/images/team/team-6.webp"
+  },
+  {
+    id: 7,
+    name: "Benjamin C.",
+    post: "Lead Designer",
+    image: "/images/team/team-7.webp"
+  },
+  {
+    id: 8,
+    name: "Isabella M.",
+    post: "Marketing Director",
+    image: "/images/team/team-8.webp"
+  }
+  
+];
+
 
 export const footerLinks = [
   {
