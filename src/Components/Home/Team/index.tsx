@@ -27,8 +27,59 @@ const Team: FC<TeamProps> = ({ limit }) => {
           </h2>
         </div>
 
-        <div className="team-wrapper">
+        <div className="team-wrapper grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {displayTeam.map((member) => (
+            <div key={member.id} className="team-item group">
+              <div className="team-imag bg-white rounded-xl overflow-hidden relative">
+                <Image 
+                  src={member.image}
+                  alt={member.name}
+                  width={200}
+                  height={200}
+                  className="w-full h-full object-cover"
+                />
 
+                {/* overlay social icons */}
+                <div className="flex group-hover:opacity-100 gap-3 justify-center items-center z-20 text-white absolute top-0 left-0 w-full h-full bg-black/60 opacity-0 transition-opacity duration-300">
+                  <Link href="https://www.facebook.com" target="_blank" rel="noreferrer">
+                    <Icon 
+                      icon="gg:facebook"
+                      width="30"
+                      height="30"
+                      className="bg-white text-black rounded-sm hover:bg-prim hover:text-white border border-gray-600 transition-colors duration-300 cursor-pointer"
+                    />
+                  </Link>
+
+                  <Link href="https://www.twitter.com" target="_blank" rel="noreferrer">
+                    <Icon
+                      icon="mdi:twitter"
+                      width="30"
+                      height="30"
+                      className="bg-white text-black rounded-sm hover:bg-prim hover:text-white border border-gray-600 transition-colors duration-300 cursor-pointer"
+                    />
+                  </Link>
+
+                  <Link href="https://www.instagram.com" target="_blank" rel="noreferrer">
+                    <Icon
+                      icon="ri:instagram-line"
+                      width="30"
+                      height="30"
+                      className="bg-white text-black rounded-sm hover:bg-prim hover:text-white border border-gray-600 transition-colors duration-300 cursor-pointer"
+                    />
+                  </Link>
+
+                  <Link href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+                    <Icon
+                      icon="ri:linkedin-fill"
+                      width="30"
+                      height="30"
+                      className="bg-white text-black rounded-sm hover:bg-prim hover:text-white border border-gray-600 transition-colors duration-300 cursor-pointer"
+                    />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
