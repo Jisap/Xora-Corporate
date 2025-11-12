@@ -1,6 +1,7 @@
 "use client"
 
 import Companies from "@/Components/Home/Companies"
+import Team from "@/Components/Home/Team"
 import Testimonials from "@/Components/Home/Testimonials.tsx"
 import HeroSub from "@/Components/SharedComponents/HeroSub"
 import { Icon } from "@iconify/react"
@@ -235,6 +236,10 @@ const page = () => {
           </div>
         </div>
       </div>
+
+      <Companies />
+      <Testimonials />
+      <Team limit={4}/>
 
     </>
   )
