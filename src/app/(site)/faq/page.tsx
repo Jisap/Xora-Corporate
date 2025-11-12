@@ -76,7 +76,17 @@ const page = () => {
             />
           </div>
           
-          <div className="lg:w-[50%] w-full">
+          <div className="lg:w-[50%] w-full space-y-4">
+            <div className="text-center">
+              <span className="subt-title text-14 bg-prim text-white py-1 rounded-xl relative font-chakrapetch capitalize ps-5 pe-3">
+                Common Questions
+              </span>
+
+              <h2 className="mt-4 font-chakrapetch lg:text-35 font-semibold mb-10">
+                Need help? Start Here
+              </h2>
+            </div>
+
             <div className="space-y-4 w-full">
               {faqData.map((item, index) => (
                 <div
@@ -109,7 +119,7 @@ const page = () => {
         </div>
       </section>
 
-      <div className='bg-light overflow-hidden py-14 lg:py-18 '>
+      {/* <div className='bg-light overflow-hidden py-14 lg:py-18 '>
         <div className='container mx-auto lg:max-w-[--breakpoint-xl] md:max-w-[--breakpoint-md] px-4 gap-5'>
           <div className="w-full text-center mb-10">
             <span className="subt-title text-14 bg-prim text-white py-1 rounded-xl relative font-chakrapetch capitalize ps-5 pe-3">
@@ -150,7 +160,7 @@ const page = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   )
 }
