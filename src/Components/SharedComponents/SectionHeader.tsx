@@ -1,33 +1,33 @@
-// d:\React-Utilidades\next16-axora-corporate\src\Components\SharedComponents\SectionHeader.tsx
 import React from 'react';
-import { Icon } from '@iconify/react';
-import Link from 'next/link';
 
 interface SectionHeaderProps {
   subtitle: string;
   title: string;
   position?: 'left' | 'center' | 'right';
-  children?: React.ReactNode; // Para contenido adicional como un botón o descripción
+  children?: React.ReactNode;
+  titleClassName?: string;
 }
 
 const SectionHeader: React.FC<SectionHeaderProps> = ({
   subtitle,
   title,
-  position = 'left', // Valor por defecto
+  position = 'left',
   children,
+  titleClassName = 'w-full lg:w-3/4',
 }) => {
-  const alignmentClasses = {
-    left: 'items-start text-left',
-    center: 'items-center text-center',
-    right: 'items-end text-right',
+  const alignmentClasses = `text-${position}`;
+  const flexAlignment = {
+    left: 'items-start',
+    center: 'items-center',
+    right: 'items-end',
   };
 
   return (
-    <div className={`flex flex-col gap-2 ${alignmentClasses[position]}`}>
-      <span className='sub-title text-14 bg-prim text-white py-1 rounded-xl relative font-chakrapetch capitalize ps-5 pe-3'>
+    <div className={`solution-content flex flex-col ${alignmentClasses} ${flexAlignment[position]} gap-4`}>
+      <span className='sub-title text-14 bg-prim text-white py-1 rounded-xl relative font-chakrapetch capitalize ps-5 pe-3 w-fit'>
         {subtitle}
       </span>
-      <h2 className='w-full mt-4 font-chakrapetch lg:text-35 font-semibold'>
+      <h2 className={`font-chakrapetch lg:text-35 font-semibold ${titleClassName}`}>
         {title}
       </h2>
       {children && <div className="mt-4">{children}</div>}

@@ -2,6 +2,7 @@ import HeroSub from '@/Components/SharedComponents/HeroSub';
 import SectionHeader from '@/Components/SharedComponents/SectionHeader';
 import { Services } from '@/app/api/data';
 import { createSlug } from '@/lib/utils';
+import ActionButton from '@/Components/SharedComponents/ActionButton';
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -20,29 +21,20 @@ const ServicesPage = () => {
         breadcrumbLinks={breadcrumbLinks}
       />
 
-      <div className='container mx-auto pt-10 flex justify-between items-start lg:items-end gap-2 flex-col lg:flex-row bg-gray-50'>
-        <SectionHeader
-          subtitle="Services"
-          title="Our Services"
-          position="left"
-        />
-
-        <Link
-          href="/contact"
-          className='text-white bg-dark h-[50px] lg:text-16 text-sm w-fit rounded-full font-chakrapetch font-semibold flex gap-2 ps-4 pe-2 py-2 justify-center items-center tracking-wider group'
-        >
-          Request a Call
-          <Icon
-            icon="tabler:arrow-right"
-            width="24"
-            height="24"
-            className='bg-prim text-white rounded-full h-full w-[35px] p-1.5 group-hover:-rotate-45 tansition-all duration-300'
-          />
-        </Link>
-      </div>
-
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-prim-light">
         <div className="container mx-auto px-4">
+          <div className="flex justify-between items-start lg:items-end gap-2 flex-col lg:flex-row mb-12">
+            <SectionHeader
+              subtitle="Services"
+              title="Our Services"
+              position="left"
+            />
+            <ActionButton
+              href="/contact"
+              text="Request a Call"
+            />
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {Services.map((service) => {
               const slug =
