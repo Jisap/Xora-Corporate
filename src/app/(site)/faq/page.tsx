@@ -76,7 +76,7 @@ const page = () => {
             />
           </div>
           
-          <div className="lg:w-[50%] w-full space-y-4">
+          <div className="lg:w-[50%] w-full space-y-8">
             <div className="text-center">
               <span className="subt-title text-14 bg-prim text-white py-1 rounded-xl relative font-chakrapetch capitalize ps-5 pe-3">
                 Common Questions

@@ -282,3 +282,210 @@ export const footerLinks2 = [
     link: "#"
   }
 ]
+
+export const Services = [
+  {
+    id: 1,
+    title: "Core Capabilities",
+    shortTitle: "Core Capabilities",
+    slug: "core-capabilities",
+    titleLarge: "Strategic planning and execution in the comprehensive process of formulating goals",
+    img: "/images/services/service-01.webp",
+    bgImg: "/images/services/service-01.webp",
+    iconName: "tji-service-1",
+    svg: "/images/icons/service-01.svg",
+    desc: "We develop customized, data-driven strategies to help organizations achieve their objectives efficiently and sustainably.",
+    shortDesc: "Strategic and operational planning to define and achieve measurable goals.",
+    totalProject: "10 Projects",
+    process: {
+      title: "Services Process",
+      desc: "From concept to execution, we guide the entire process with data-driven insights and precision.",
+      processItems: [
+        "Define measurable objectives",
+        "Analyze and assess challenges",
+        "Design tailored strategies",
+        "Implement and monitor results"
+      ]
+    },
+    faq: [
+      {
+        question: '¿En qué consiste el servicio de Capacidades Clave?',
+        answer: 'Nuestro servicio de Capacidades Clave se enfoca en el desarrollo de estrategias personalizadas y basadas en datos para ayudar a las organizaciones a alcanzar sus objetivos de manera eficiente y sostenible, abarcando desde la planificación estratégica hasta la operativa.'
+      },
+      {
+        question: '¿Qué incluye el proceso de planificación estratégica?',
+        answer: 'El proceso incluye definir objetivos medibles, analizar y evaluar desafíos, diseñar estrategias a medida e implementar y monitorizar los resultados para asegurar el éxito.'
+      }
+    ]
+  },
+  {
+    id: 2,
+    title: "Security & Compliance",
+    shortTitle: "Security & Compliance",
+    slug: "security-and-compliance",
+    titleLarge: "Protecting digital assets through advanced security and compliance frameworks",
+    img: "/images/services/service-02.webp",
+    bgImg: "/images/services/service-02.webp",
+    iconName: "tji-service-2",
+    svg: "/images/icons/service-02.svg",
+    desc: "Ensure data security and regulatory compliance with proactive monitoring and protection.",
+    shortDesc: "Safeguard your infrastructure through rigorous compliance standards.",
+    totalProject: "11 Projects",
+    process: {
+      title: "Services Process",
+      desc: "We assess, design, and maintain security frameworks that protect business integrity.",
+      processItems: [
+        "Identify potential vulnerabilities",
+        "Design compliance strategies",
+        "Implement protection layers",
+        "Continuously monitor systems"
+      ]
+    },
+    faq: [
+      {
+        question: '¿Cómo garantizan la seguridad y el cumplimiento normativo?',
+        answer: 'Aseguramos la seguridad de los datos y el cumplimiento normativo mediante la monitorización proactiva, la protección de activos digitales con marcos de seguridad avanzados y la implementación de capas de protección para salvaguardar la integridad del negocio.'
+      },
+      {
+        question: '¿Qué pasos siguen para asegurar la infraestructura?',
+        answer: 'Nuestro proceso implica identificar vulnerabilidades potenciales, diseñar estrategias de cumplimiento, implementar capas de protección y monitorizar continuamente los sistemas para prevenir brechas de seguridad.'
+      }
+    ]
+  },
+  {
+    id: 3,
+    title: "Performance & Reliability",
+    shortTitle: "Performance",
+    slug: "performance",
+    titleLarge: "Enhancing performance through scalable and reliable infrastructures",
+    img: "/images/services/service-03.webp",
+    bgImg: "/images/services/service-03.webp",
+    iconName: "tji-service-3",
+    svg: "/images/icons/service-03.svg",
+    desc: "We improve system reliability and performance through scalable, optimized architectures.",
+    shortDesc: "Ensure operational efficiency and minimize downtime with robust systems.",
+    totalProject: "15 Projects",
+    process: {
+      title: "Services Process",
+      desc: "Performance analysis, optimization, and continuous improvement cycles.",
+      processItems: [
+        "Evaluate performance metrics",
+        "Identify optimization points",
+        "Implement improvements",
+        "Monitor and iterate"
+      ]
+    },
+    faq: [
+      {
+        question: '¿Qué tipo de mejoras de rendimiento ofrecen?',
+        answer: 'Mejoramos la fiabilidad y el rendimiento del sistema a través de arquitecturas escalables y optimizadas. Nuestro proceso incluye la evaluación de métricas de rendimiento, la identificación de puntos de optimización y la implementación de mejoras continuas para minimizar el tiempo de inactividad.'
+      },
+      {
+        question: '¿Cómo miden el éxito en la optimización del rendimiento?',
+        answer: 'El éxito se mide a través de métricas clave de rendimiento (KPIs) como el tiempo de respuesta, la disponibilidad del sistema y la utilización de recursos. Realizamos un seguimiento constante para asegurar que se cumplen los objetivos acordados.'
+      }
+    ]
+  },
+  {
+    id: 4,
+    title: "Management & Monitoring",
+    shortTitle: "Monitoring",
+    slug: "monitoring",
+    titleLarge: "Real-time management and system monitoring to ensure consistent operations",
+    img: "/images/services/service-5.webp",
+    bgImg: "/images/services/service-5.webp",
+    iconName: "tji-service-4",
+    svg: "/images/icons/service-04.svg",
+    desc: "Stay in control with automated system monitoring and actionable analytics.",
+    shortDesc: "Maintain uptime and performance through proactive management.",
+    totalProject: "10 Projects",
+    process: {
+      title: "Services Process",
+      desc: "From monitoring to predictive maintenance, we ensure continuous operations.",
+      processItems: [
+        "Set up monitoring tools",
+        "Track key performance metrics",
+        "Respond to incidents rapidly",
+        "Generate improvement insights"
+      ]
+    },
+    faq: [
+      {
+        question: '¿Qué herramientas utilizan para la monitorización en tiempo real?',
+        answer: 'Utilizamos un conjunto de herramientas de monitorización líderes en la industria que nos permiten rastrear métricas clave de rendimiento, responder a incidentes de forma rápida y generar informes para la mejora continua.'
+      },
+      {
+        question: '¿Ofrecen mantenimiento predictivo?',
+        answer: 'Sí, como parte de nuestro servicio de monitorización, analizamos tendencias y patrones para anticipar posibles problemas, permitiendo un mantenimiento predictivo que asegura la operatividad continua de los sistemas.'
+      }
+    ]
+  },
+  {
+    id: 5,
+    title: "IT Support & Maintenance",
+    shortTitle: "IT Support",
+    slug: "it-support",
+    titleLarge: "Continuous IT support to guarantee system stability and user satisfaction",
+    img: "/images/services/service-6.webp",
+    bgImg: "/images/services/service-6.webp",
+    iconName: "tji-service-5",
+    svg: "/images/icons/service-5.svg",
+    desc: "We provide end-to-end IT maintenance to prevent issues and ensure business continuity.",
+    shortDesc: "24/7 IT support with proactive maintenance and updates.",
+    totalProject: "12 Projects",
+    process: {
+      title: "Services Process",
+      desc: "Comprehensive support lifecycle to maintain and evolve your systems.",
+      processItems: [
+        "Diagnose and troubleshoot",
+        "Apply regular maintenance",
+        "Update and patch systems",
+        "Review performance metrics"
+      ]
+    },
+    faq: [
+      {
+        question: '¿Qué niveles de soporte de TI ofrecen?',
+        answer: 'Ofrecemos soporte de TI integral, desde el diagnóstico y la resolución de problemas hasta el mantenimiento regular y la aplicación de parches de seguridad. Nuestro objetivo es prevenir incidencias y garantizar la continuidad del negocio.'
+      },
+      {
+        question: '¿Su soporte está disponible 24/7?',
+        answer: 'Sí, proporcionamos soporte 24/7 con mantenimiento proactivo y actualizaciones para asegurar que sus sistemas estén siempre estables y los usuarios satisfechos.'
+      }
+    ]
+  },
+  {
+    id: 6,
+    title: "Marketing Strategy & Campaigns",
+    shortTitle: "Marketing",
+    slug: "marketing",
+    titleLarge: "Data-driven marketing campaigns designed for measurable impact",
+    img: "/images/services/service-7.webp",
+    bgImg: "/images/services/service-7.webp",
+    iconName: "tji-service-6",
+    svg: "/images/icons/service-06.svg",
+    desc: "We craft marketing strategies that align with your brand goals and connect with your audience.",
+    shortDesc: "Maximize reach and engagement with strategic, targeted campaigns.",
+    totalProject: "9 Projects",
+    process: {
+      title: "Services Process",
+      desc: "Plan, execute, and optimize marketing campaigns for measurable results.",
+      processItems: [
+        "Define audience and goals",
+        "Develop creative strategy",
+        "Execute campaigns",
+        "Analyze and optimize outcomes"
+      ]
+    },
+    faq: [
+      {
+        question: '¿Cómo diseñan una campaña de marketing efectiva?',
+        answer: 'Creamos estrategias de marketing que se alinean con los objetivos de su marca y conectan con su audiencia. Nuestro proceso incluye la definición de la audiencia, el desarrollo de una estrategia creativa, la ejecución de campañas y el análisis de resultados para optimizar el impacto.'
+      },
+      {
+        question: '¿Qué métricas utilizan para medir el éxito de una campaña?',
+        answer: 'Maximizamos el alcance y la interacción con campañas estratégicas y dirigidas. Medimos el éxito a través de métricas como el retorno de la inversión (ROI), la tasa de conversión, el coste de adquisición de clientes (CAC) y el valor de vida del cliente (LTV).'
+      }
+    ]
+  }
+];

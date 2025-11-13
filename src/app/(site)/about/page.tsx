@@ -4,6 +4,7 @@ import Companies from "@/Components/Home/Companies"
 import Team from "@/Components/Home/Team"
 import Testimonials from "@/Components/Home/Testimonials.tsx"
 import HeroSub from "@/Components/SharedComponents/HeroSub"
+import SectionHeader from "@/Components/SharedComponents/SectionHeader"
 import { Icon } from "@iconify/react"
 import Image from "next/image"
 import Link from "next/link"
@@ -19,24 +20,20 @@ const page = () => {
 
   return (
     <>
-      <HeroSub 
+      <HeroSub
         title="About"
         description=""
-        breadcrumbLinks={breadcrumbLinks} 
+        breadcrumbLinks={breadcrumbLinks}
       />
       <section className='bg-light overflow-hidden py-14 lg:py-18 '>
         <div className='container mx-auto lg:max-w-[--breakpoint-xl] md:max-w-[--breakpoint-md] px-4 space-y-14'>
 
           <div className='about-content flex justify-between items-start lg:items-end gap-2 flex-col lg:flex-row'>
-            <div>
-              <span className='sub-title text-14 bg-prim text-white py-1 rounded-xl relative font-chakrapetch capitalize ps-5 pe-3'>
-                Choose the Best
-              </span>
-
-              <h2 className='w-full lg:w-3/4 mt-4 font-chakrapetch lg:text-35 font-semibold'>
-                Empowering Business with Expertise.
-              </h2>
-            </div>
+            <SectionHeader
+              subtitle="Choose the Best"
+              title="Empowering Business with Expertise."
+              position="left"
+            />
 
             <Link
               href="/contact"
@@ -117,100 +114,100 @@ const page = () => {
         <div className='container mx-auto lg:max-w-[--breakpoint-xl] md:max-w-[--breakpoint-md] px-4 space-y-14 flex flex-col lg:flex-row items-start gap-5'>
           <div className="content w-full lg:w-[55%]">
 
-              <span className='sub-title text-14 bg-prim text-white py-1 rounded-xl relative font-chakrapetch capitalize ps-5 pe-3'>
-                Get to Know Us
-              </span>
+            <span className='sub-title text-14 bg-prim text-white py-1 rounded-xl relative font-chakrapetch capitalize ps-5 pe-3'>
+              Get to Know Us
+            </span>
 
-              <h2 className='w-full lg:w-3/4 mt-4 font-chakrapetch lg:text-35 font-semibold pb-5'>
-                Driving Innovation and Excellence for Sustainable Corporate Success Worldwide.
-              </h2>
+            <h2 className='w-full lg:w-3/4 mt-4 font-chakrapetch lg:text-35 font-semibold pb-5'>
+              Driving Innovation and Excellence for Sustainable Corporate Success Worldwide.
+            </h2>
 
-              <div className="flex lg:flex-row flex-col gap-4">
-                <div className="bg-white p-5 rounded-xl">
-                  <h4 className="font-unbounded text-xl pb-3">
-                    Our Mission
-                  </h4>
+            <div className="flex lg:flex-row flex-col gap-4">
+              <div className="bg-white p-5 rounded-xl">
+                <h4 className="font-unbounded text-xl pb-3">
+                  Our Mission
+                </h4>
 
-                  <p className="capitalize pb-5">
-                    Our mission is empower businesses through innovate best solution, exceptional service.
-                  </p>
+                <p className="capitalize pb-5">
+                  Our mission is empower businesses through innovate best solution, exceptional service.
+                </p>
 
-                  <ul className="space-y-2.5">
-                    <li className="flex gap-1">
-                      <Icon
-                        icon="weui:arrow-outlined"
-                        width="12"
-                        height="24"
-                        className='text-prim' 
-                      />
-                      Innovation & Excellence
-                    </li>
+                <ul className="space-y-2.5">
+                  <li className="flex gap-1">
+                    <Icon
+                      icon="weui:arrow-outlined"
+                      width="12"
+                      height="24"
+                      className='text-prim'
+                    />
+                    Innovation & Excellence
+                  </li>
 
-                    <li className="flex gap-1">
-                      <Icon
-                        icon="weui:arrow-outlined"
-                        width="12"
-                        height="24"
-                        className='text-prim' 
-                      />
-                      Exceptional Customer
-                    </li>
+                  <li className="flex gap-1">
+                    <Icon
+                      icon="weui:arrow-outlined"
+                      width="12"
+                      height="24"
+                      className='text-prim'
+                    />
+                    Exceptional Customer
+                  </li>
 
-                    <li className="flex gap-1">
-                      <Icon
-                        icon="weui:arrow-outlined"
-                        width="12"
-                        height="24"
-                        className='text-prim' 
-                      />
-                      Bussiness Growth
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="bg-white p-5 rounded-xl">
-                  <h4 className="font-unbounded text-xl pb-3">
-                    Our Vision
-                  </h4>
-
-                  <p className="capitalize pb-5">
-                    Our vision is to become a global leader in providing transformative business solutions.
-                  </p>
-
-                  <ul className="space-y-2.5">
-                    <li className="flex gap-1">
-                      <Icon
-                        icon="weui:arrow-outlined"
-                        width="12"
-                        height="24"
-                        className='text-prim'
-                      />
-                      Leader in Solutions
-                    </li>
-
-                    <li className="flex gap-1">
-                      <Icon
-                        icon="weui:arrow-outlined"
-                        width="12"
-                        height="24"
-                        className='text-prim'
-                      />
-                      Transformative Impact
-                    </li>
-
-                    <li className="flex gap-1">
-                      <Icon
-                        icon="weui:arrow-outlined"
-                        width="12"
-                        height="24"
-                        className='text-prim'
-                      />
-                      Sustainable success
-                    </li>
-                  </ul>
-                </div>
+                  <li className="flex gap-1">
+                    <Icon
+                      icon="weui:arrow-outlined"
+                      width="12"
+                      height="24"
+                      className='text-prim'
+                    />
+                    Bussiness Growth
+                  </li>
+                </ul>
               </div>
-        
+
+              <div className="bg-white p-5 rounded-xl">
+                <h4 className="font-unbounded text-xl pb-3">
+                  Our Vision
+                </h4>
+
+                <p className="capitalize pb-5">
+                  Our vision is to become a global leader in providing transformative business solutions.
+                </p>
+
+                <ul className="space-y-2.5">
+                  <li className="flex gap-1">
+                    <Icon
+                      icon="weui:arrow-outlined"
+                      width="12"
+                      height="24"
+                      className='text-prim'
+                    />
+                    Leader in Solutions
+                  </li>
+
+                  <li className="flex gap-1">
+                    <Icon
+                      icon="weui:arrow-outlined"
+                      width="12"
+                      height="24"
+                      className='text-prim'
+                    />
+                    Transformative Impact
+                  </li>
+
+                  <li className="flex gap-1">
+                    <Icon
+                      icon="weui:arrow-outlined"
+                      width="12"
+                      height="24"
+                      className='text-prim'
+                    />
+                    Sustainable success
+                  </li>
+                </ul>
+              </div>
+            </div>
+
             <Link
               href="/contact"
               className='text-white bg-dark h-[50px] lg:text-16 text-sm w-full rounded-xl font-chakrapetch font-semibold flex gap-2 ps-4 pe-2 py-2 justify-center items-center tracking-wider group mt-5'
@@ -226,7 +223,7 @@ const page = () => {
           </div>
 
           <div className="image lg:w-[45%] md:w-3/4 w-full md:mx-auto md:py-10 rounded-lg overflow-hidden">
-            <Image 
+            <Image
               src="/images/about/about-01.webp"
               alt="About"
               width={300}
@@ -239,7 +236,7 @@ const page = () => {
 
       <Companies />
       <Testimonials />
-      <Team limit={4}/>
+      <Team limit={4} />
 
     </>
   )

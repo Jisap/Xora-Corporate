@@ -36,10 +36,10 @@ export const HeaderData: headerItem[] = [
         label: "Services List",
         href: "/services"
       },
-      {
-        label: "Services Details",
-        href: "/Services"
-      },
+      // {
+      //   label: "Services Details",
+      //   href: "/Services"
+      // },
     ]
   },
   {

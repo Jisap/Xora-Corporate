@@ -1,95 +1,96 @@
-import HeroSub from '@/Components/SharedComponents/HeroSub'
-import { Icon } from '@iconify/react'
-import Image from 'next/image'
-import { notFound } from 'next/navigation'
-import React, { useState } from 'react'
+import { Services } from '@/app/api/data';
+import HeroSub from '@/Components/SharedComponents/HeroSub';
+import ServiceDetailsClient from './ServiceDetailsClient';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import { createSlug } from '@/lib/utils';
+import { Icon } from '@iconify/react';
+import Link from 'next/link';
+import SectionHeader from '@/Components/SharedComponents/SectionHeader';
 
 interface Props {
-  params: 
-    Promise<{
-      slug: string
-    }> 
+  params: { slug: string };
 }
 
+const ServiceDetailsPage = async ({ params }: Props) => {
+  const { slug } = await params;
 
-const ServiceDetails = async({params}: Props) => {
+  if (!slug || slug === 'undefined') {
+    return notFound();
+  }
 
-  const { slug } = await params
+  const service = Services.find(
+    (s) =>
+      s.slug === slug || createSlug(s.shortTitle ?? '') === slug
+  );
 
-  const service = ServiceDetails.find((s) => s.slug === slug)
-  if(!service) return notFound()
+  if (!service) {
+    console.error('No se encontró el servicio para el slug:', slug);
+    return notFound();
+  }
 
   const breadcrumbLinks = [
-    {href: "/", text: "Home"},
-    {href: "/services", text: "Services Details"},
-  ]
-
-  const [openIndex, setOpenIndex] = useState<number | null>(0)
-
-  const toggle = (index:number) => {
-    setOpenIndex(openIndex === index ? null : index)
-  }
+    { href: '/', text: 'Home' },
+    { href: '/services', text: 'Services' },
+    { href: `/services/${slug}`, text: service.shortTitle ?? 'Details' },
+  ];
 
   return (
     <>
-      <HeroSub title={service.title} description={service.description} breadcrumbLinks={breadcrumbLinks} />
+      <HeroSub
+        title={service.title}
+        description={service.shortDesc}
+        breadcrumbLinks={breadcrumbLinks}
+      />
 
-    <section className='pb-20'>
-      <div className='container mx-auto lg:max-w-[--breakpoint-xl] md:max-w-[--breakpoint-md] px-4 flex space-y-14'>
-        <div className='lg:w-[60%] w-full'>
-          <div className='bg-white rounded-2xl spacy-y-6 p-5'>
-            {service.image && (
-              <Image 
-                src={service.image}
+      <div className='container mx-auto pt-10 flex justify-between items-start lg:items-end gap-2 flex-col lg:flex-row bg-gray-50'>
+        <SectionHeader
+          subtitle="Services Details"
+          title="More Details about this service"
+          position="left"
+        />
+
+        <Link
+          href="/contact"
+          className='text-white bg-dark h-[50px] lg:text-16 text-sm w-fit rounded-full font-chakrapetch font-semibold flex gap-2 ps-4 pe-2 py-2 justify-center items-center tracking-wider group'
+        >
+          Request a Call
+          <Icon
+            icon="tabler:arrow-right"
+            width="24"
+            height="24"
+            className='bg-prim text-white rounded-full h-full w-[35px] p-1.5 group-hover:-rotate-45 tansition-all duration-300'
+          />
+        </Link>
+      </div>
+
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-10">
+          <div className="lg:w-3/5 bg-white rounded-2xl shadow-md overflow-hidden">
+            {service.img && (
+              <Image
+                src={service.img}
                 alt={service.title}
                 width={800}
                 height={400}
-                className="w-full h-[400px] object-cover rounded-2xl"
+                className="w-full h-[400px] object-cover"
               />
             )}
+            <div className="p-6">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                {service.title}
+              </h2>
+              <p className="text-gray-700 leading-relaxed">{service.desc}</p>
+            </div>
           </div>
+
+          <aside className="lg:w-2/5">
+            <ServiceDetailsClient faq={service.faq} />
+          </aside>
         </div>
-      </div>
-    </section>  
-
-      <h4 className='font-unbounded font-medium text-3xl'>
-        Our Range of Customer Services
-      </h4>
-
-      <p className='pb-4 text-pera-dark text-16 leading-6'>
-        At Bexon, we dont just focus on solving customer probles. We also provide a range of services to help our clients achieve their goals. From consulting to project management, we have the expertise and resources to help you succeed.
-      </p>
-
-      <div className='space-y-4 w-full'>
-        {faqData.map((item, index) => (
-          <div
-            key={index}
-            className={`border rounded-lg overflow-hidden transition-all duration-300
-              ${openIndex === index ? "bg-prim text-white" : "bg-white text-black"}
-            `}
-          >
-            <button
-              className='w-full flex justify-between items-center px-6 py-4 text-left focus:outline-none'
-              onClick={() => toggle(index)}
-            >
-              <span className='font-medium'>
-                {item.question}
-              </span>
-              <Icon 
-                icon={openIndex === index ? "akar-icons:minus" : "akar-icons:plus"} className='text-xl' 
-              />
-            </button>
-
-            {openIndex === index && (
-              <div className='px-6 py-4 border-t border-teal-500 bg-teal-600/10 text-white/90'>
-                {item.answer}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
+      </section>
     </>
-  )
-}
+  );
+};
 
-export default ServiceDetails
+export default ServiceDetailsPage;
