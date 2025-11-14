@@ -26,7 +26,7 @@ const ContactCard: React.FC<ContactCardProps> = ({ icon, title, description, lin
         </h4>
         <p className='text-sm text-gray-500 group-hover:text-gray-300'>
           {description}
-          {link && <Link href="/contact">Need help ?</Link>}
+          {link && <Link href="/contact" className='group-hover:underline'><br/>Need help ?</Link>}
         </p>
       </div>
     </div>
