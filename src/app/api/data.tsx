@@ -489,3 +489,27 @@ export const Services = [
     ]
   }
 ];
+
+export const ContactCardsData = [
+  {
+    icon: "tdesign:location",
+    title: "Our Location",
+    description: "123 Main Street, Anytown USA",
+  },
+  {
+    icon: "ic:outline-email",
+    title: "Email Us",
+    description: "webexample@axora.com",
+  },
+  {
+    icon: "material-symbols:call-outline-sharp",
+    title: "Call Us",
+    description: "+1 (555) 555-5555",
+  },
+  {
+    icon: "hugeicons:chat",
+    title: "Live Chat",
+    description: "livechat@axora.com",
+    link: "/contact",
+  },
+];
