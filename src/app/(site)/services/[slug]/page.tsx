@@ -72,13 +72,52 @@ const ServiceDetailsPage = async ({ params }: Props) => {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                   {service.title}
                 </h2>
-                <p className="text-gray-700 leading-relaxed">{service.desc}</p>
+                <div className="space-y-4">
+                  {service.desc.split('\n\n').map((paragraph, index) => (
+                    <p key={index} className="text-gray-700 leading-relaxed">{paragraph}</p>
+                  ))}
+                </div>
               </div>
             </div>
 
-            <aside className="lg:w-2/5">
+            <aside className="flex flex-col gap-4 lg:w-2/5">
               <ServiceDetailsClient faq={service.faq} />
+
+              <div className="bg-white p-6 rounded-2xl shadow-md">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  {service.process.title}
+                </h3>
+                <p className="text-gray-600 mb-4">{service.process.desc}</p>
+                <ul className="space-y-3">
+                  {service.process.processItems.map((item, index) => (
+                    <li key={index} className="flex items-center gap-2">
+                      <Icon
+                        icon="material-symbols:check-rounded"
+                        width="24"
+                        height="24"
+                        className="bg-prim text-white rounded-full p-0.5 shrink-0"
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className='border-gray-100 shadow-lg bg-white p-5 rounded-xl'>
+                <h4 className='text-black pb-5 text-xl font-semibold'>Tags</h4>
+                <div className='flex flex-wrap gap-2'>
+                {["Brading", "Bussines", "Consulting", "Design", "Innovate", "Lead", "Marketing"].map(
+                  (tag) => (
+                    <span key={tag}className='border border-boder px-3 py-0.5 rounded-sm hover:bg-pera-dark hover:border-transparent hover:text-white transition-colors duration-300'>
+                      {tag}
+                    </span>
+                  )
+                )}
+                </div>
+
+              </div>
             </aside>
+
           </div>
         </div>
       </section>
