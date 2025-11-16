@@ -54,7 +54,7 @@ const ServicesPage = () => {
                     />
                   </div>
 
-                  <div className="p-6 flex flex-col grow 2xl:flex-row 2xl:justify-between 2xl:items-end">
+                  <div className="p-6 flex flex-col grow 2xl:flex-row 2xl:justify-between 2xl:items-end hover:bg-pera-light transition-colors duration-300">
                     <div className="grow mb-4 2xl:mb-0">
                       <Link href={`/services/${slug}`}>
                         <h3 className="text-xl font-semibold mb-2 text-gray-900 hover:text-prim transition-colors">
