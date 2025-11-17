@@ -46,6 +46,13 @@ const ServicesPage = () => {
                   className="group bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col"
                 >
                   <div className="relative w-full h-60 overflow-hidden">
+                    <div className="absolute top-2 right-2 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <Icon
+                        icon={service.icon}
+                        width="32"
+                        height="32"
+                        className="text-white" />
+                    </div>
                     <Image
                       src={service.img}
                       alt={service.title}
