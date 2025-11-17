@@ -37,7 +37,7 @@ const page = () => {
           <div className="lg:w-[60%] w-full">
             {filteredBlogs.length > 0 ? (
               filteredBlogs.map((item) => (
-                <div key={item.id} className="blog-item border-border w-full bg-white p-5 rounded-2xl group h-auto mb-5">
+                <div key={item.id} className="blog-item border border-border w-full bg-white p-5 rounded-2xl group h-auto mb-5">
                   <div className="blog-image w-full rounded-2xl overflow-hidden relative">
                     <Image
                       src={item.image}
@@ -82,6 +82,26 @@ const page = () => {
                 No blogs found matching "{searchTerm}"
               </div>
             )}
+          </div>
+
+          <div className="lg:w-[40%] w-full lg:self-start sticky top-0 right-0">
+            <div className="lg:sticky top-20 space-y-5">
+              <div className="shadow-lg border border-gray-100 bg-white p-5 rounded-xl">
+                <h4 className="text-black pb-5">Search Here</h4>
+                <form 
+                  className="search-box"
+                  onSubmit={(e) => e.preventDefault()}
+                >
+                  <input 
+                    type="text"
+                    placeholder="Search Here"
+                    className="p-3 border-border w-full rounded-md"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
