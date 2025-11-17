@@ -9,8 +9,8 @@ import Link from 'next/link';
 import SectionHeader from '@/Components/SharedComponents/SectionHeader';
 import ActionButton from '@/Components/SharedComponents/ActionButton';
 
-interface Props {
-  params: { slug: string };
+type Props = {
+  params: Promise<{ slug: string }>;
 }
 
 const ServiceDetailsPage = async ({ params }: Props) => {
