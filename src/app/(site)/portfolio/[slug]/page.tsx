@@ -147,8 +147,16 @@ const PortfolioDetails = ({ params }: Props) => {
               </div>
             </div>
 
-            <div className="">
+            <div className="border-gray-100 shadow-lg bg-white p-5 rounded-xl">
+              <h4 className="text-black pb-5 font-semibold">Tags</h4>
 
+              <div className="flex flex-wrap gap-2"> 
+                {["Desing", "Branding", "UI/UX", "Development", "Creative", "Marketing"].map((item) => (
+                  <span key={item} className="border border-boder px-3 py-0.5 rounded-sm hover:bg-pera-dark hover:border-transparent hover:text-white transition-colors duration-300">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
