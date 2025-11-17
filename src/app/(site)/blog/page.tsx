@@ -17,11 +17,25 @@ const page = () => {
     { href: "/blog", text: "Blog" },
   ];
 
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const filteredBlogs = blogs.filter((blog) =>
-    blog.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
-    blog.description.toLowerCase().includes(searchTerm.toLowerCase()) 
+  const filteredBlogs = blogs.filter((blog) => {
+    const matchesSearch =
+      blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      blog.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = selectedCategory ? blog.category === selectedCategory : true;
+    return matchesSearch && matchesCategory;
+  });
+
+  const categories = blogs.reduce(
+    (acc, blog) => {
+      if (!acc[blog.category]) {
+        acc[blog.category] = 0;
+      }
+      acc[blog.category]++;
+      return acc;
+    }, {} as Record<string, number>
   );
 
   const recentPosts = [...blogs]
@@ -122,7 +136,7 @@ const page = () => {
 
                       <div>
                         <p className="text-sm text-gray-500">{post.date}</p>
-                        
+
                         <Link href={`/blog/${post.slug}`}>
                           <h5 className="font-semibold text-black group-hover:text-prim transition-colors duration-300 line-clamp-2">{post.title}</h5>
                         </Link>
@@ -130,6 +144,32 @@ const page = () => {
                     </div>
                   ))}
                 </div>
+              </div>
+
+              <div className="border border-gray-100 shadow-lg bg-white p-5 rounded-xl">
+                <h4 className="text-black pb-5">
+                  Categories
+                </h4>
+
+                <ul className="flex flex-col gap-3">
+                  <li 
+                    className={`flex justify-between items-center cursor-pointer group ${!selectedCategory ? 'text-prim' : ''}`}
+                    onClick={() => setSelectedCategory(null)}
+                  >
+                    <span className="group-hover:text-prim transition-colors duration-300">Todas las Categorías</span>
+                    <span>({blogs.length})</span>
+                  </li>
+                  {Object.entries(categories).map(([category, count]) => (
+                    <li 
+                      key={category}
+                      className={`flex justify-between items-center cursor-pointer group ${selectedCategory === category ? 'text-prim' : ''}`}
+                      onClick={() => setSelectedCategory(category)}
+                    >
+                      <span className="group-hover:text-prim transition-colors duration-300">{category}</span>
+                      <span>({count})</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
