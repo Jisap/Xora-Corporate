@@ -24,6 +24,10 @@ const page = () => {
     blog.description.toLowerCase().includes(searchTerm.toLowerCase()) 
   );
 
+  const recentPosts = [...blogs]
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .slice(0, 3);
+
   return (
     <>
       <HeroSub
@@ -100,6 +104,32 @@ const page = () => {
                     onChange={(e) => setSearchTerm(e.target.value)}
                   />
                 </form>
+              </div>
+
+              <div className="border border-gray-100 shadow-lg bg-white p-5 rounded-xl">
+                <h4 className="text-black pb-5">Recent Posts</h4>
+
+                <div className="flex flex-col gap-4">
+                  {recentPosts.map((post) => (
+                    <div key={post.id} className="flex items-center gap-4 group">
+                      <Image 
+                        src={post.image}
+                        alt={post.title}
+                        width={80}
+                        height={80}
+                        className="rounded-lg object-cover w-20 h-20 shrink-0"
+                      />
+
+                      <div>
+                        <p className="text-sm text-gray-500">{post.date}</p>
+                        
+                        <Link href={`/blog/${post.slug}`}>
+                          <h5 className="font-semibold text-black group-hover:text-prim transition-colors duration-300 line-clamp-2">{post.title}</h5>
+                        </Link>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
