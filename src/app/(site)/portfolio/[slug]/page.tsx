@@ -17,16 +17,6 @@ type Props = {
   params: Promise<{ slug: string }>;
 }
 
-const projectData = [
-  {label: "Clients", value: "innovate Interiors Group"},
-  {label: "Budget", value: "$100M USD"},
-  {label: "Location", value: "San Francisco, CA"},
-  {label: "Sector", value: "Corporate Business"},
-  {label: "Complete date", value: "Jul 20, 2025"}
-]
-
-
-
 const PortfolioDetails = ({ params }: Props) => {
   const { slug } = React.use(params);
 
@@ -71,47 +61,37 @@ const PortfolioDetails = ({ params }: Props) => {
               </h4>
 
               <p className="pb-4 text-pera-dark text-16 leading-6">
-                This project highlights our expertise in creating visually appealing,
-                high-performing, and user-friendly solution. From concept to completion, we
-                focused on achieving exellence through strategy, creativity, and technology.               
+                {item.mainDescription}
               </p>
 
               <h4 className="font-unbounded font-medium uppercase text-3xl">
                 Project Overview
               </h4>
 
-              <p className="pb-4 text-pera-dark text-16 leading-6">
-                In today's dynamic market, a strong and consistent brand identity is key to 
-                standing out and driving growth and a growth and growing bussiness in the Axora, 
-                recognized the need to evolve its brand to better resonate with an expanding audience and 
-                adapt to shifting market trends.
-              </p>
+              <p className="pb-4 text-pera-dark text-16 leading-6">{item.overview}</p>
 
               <h4 className="font-unbounded font-medium text-3xl">
                 Project Gallery
               </h4>
 
-              <p>
-                Our Rebranding Strategy for transformed their entire brand identity, from a fresh new Logo
-                to an update visual desing thar resonates with their growing audience.
-              </p>
+              <p>{item.galleryDescription}</p>
 
-              <Image 
-                src={portfolio1}
-                alt={item.title}
-                className="rounded-lg"
-              />
-
-              <div className="flex gap-6">
+              {/* Project Gallery Images */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Image
+                  src={portfolio1}
+                  alt={`${item.title} gallery image 1`}
+                  className="rounded-xl w-full h-auto object-cover md:col-span-2" // Span full width on medium screens and up
+                />
                 <Image
                   src={portfolio2}
-                  alt={item.title}
-                  className="rounded-xl"
+                  alt={`${item.title} gallery image 2`}
+                  className="rounded-xl w-full h-full object-cover"
                 />
                 <Image
                   src={portfolio3}
-                  alt={item.title}
-                  className="rounded-xl"
+                  alt={`${item.title} gallery image 3`}
+                  className="rounded-xl w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -124,7 +104,7 @@ const PortfolioDetails = ({ params }: Props) => {
               </h4>
 
               <div className="space-y-6">
-                {projectData.map((item, index) => (
+                {item.projectInfo?.map((info, index) => (
                   <div className="flex items-start gap-3" key={index}>
                     <div className="bg-[#007c7c] text-white w-10 h-10 flex items-center justify-center rounded-full shrink-0">
                       <Icon 
@@ -136,10 +116,10 @@ const PortfolioDetails = ({ params }: Props) => {
 
                     <div>
                       <p className="text-sm text-gray-600">
-                        {item.label}
+                        {info.label}
                       </p>
                       <p className="text-base font-semibold text-gray-900">
-                        {item.value}
+                        {info.value}
                       </p>
                     </div>
                   </div>
@@ -151,7 +131,7 @@ const PortfolioDetails = ({ params }: Props) => {
               <h4 className="text-black pb-5 font-semibold">Tags</h4>
 
               <div className="flex flex-wrap gap-2"> 
-                {["Desing", "Branding", "UI/UX", "Development", "Creative", "Marketing"].map((item) => (
+                {item.tags?.map((item) => (
                   <span key={item} className="border border-boder px-3 py-0.5 rounded-sm hover:bg-pera-dark hover:border-transparent hover:text-white transition-colors duration-300">
                     {item}
                   </span>

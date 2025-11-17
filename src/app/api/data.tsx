@@ -542,41 +542,71 @@ export const Portfolio = [
     title: "Digital Transformation for a Financial Services Firm",
     slug: "digital-transformation-finance",
     category: "Business Strategy",
-    image: "/images/protfolio/project-1.webp"
+    image: "/images/protfolio/project-1.webp",
+    mainDescription: "This project highlights our expertise in creating visually appealing, high-performing, and user-friendly solutions. From concept to completion, we focused on achieving excellence through strategy, creativity, and technology.",
+    overview: "In today's dynamic market, a strong and consistent brand identity is key to standing out and driving growth. Axora recognized the need to evolve its brand to better resonate with an expanding audience and adapt to shifting market trends.",
+    galleryDescription: "Our Rebranding Strategy for transformed their entire brand identity, from a fresh new Logo to an updated visual design that resonates with their growing audience.",
+    projectInfo: [
+      { label: "Clients", value: "Innovate Financials" },
+      { label: "Budget", value: "$250K USD" },
+      { label: "Location", value: "New York, NY" },
+      { label: "Sector", value: "Financial Services" },
+      { label: "Complete date", value: "Jan 15, 2025" }
+    ],
+    tags: ["Strategy", "Finance", "Digital Transformation", "Tech"]
   },
   {
     id: 2,
     title: "E-commerce Platform for a Retail Giant",
     slug: "ecommerce-platform-retail",
     category: "Customer Engagement",
-    image: "/images/protfolio/project-2.webp"
+    image: "/images/protfolio/project-2.webp",
+    mainDescription: "We developed a cutting-edge e-commerce platform that streamlined the customer journey and significantly boosted online sales and user engagement.",
+    overview: "A major retail giant faced challenges with their outdated online store, which suffered from poor user experience and low conversion rates. They needed a modern, scalable, and intuitive platform to compete in the digital marketplace.",
+    galleryDescription: "The new platform features a clean design, intuitive navigation, and a seamless checkout process, resulting in a 40% increase in customer satisfaction and a 25% rise in online revenue.",
+    projectInfo: [
+      { label: "Clients", value: "RetailMax Inc." },
+      { label: "Budget", value: "$1.2M USD" },
+      { label: "Location", value: "London, UK" },
+      { label: "Sector", value: "Retail & E-commerce" },
+      { label: "Complete date", value: "Mar 22, 2025" }
+    ],
+    tags: ["E-commerce", "UI/UX", "Development", "Customer Engagement"]
   },
   {
     id: 3,
     title: "Sustainable Supply Chain for a CPG Company",
     slug: "sustainable-supply-chain-cpg",
     category: "Sustainability & ESG",
-    image: "/images/protfolio/project-3.webp"
+    image: "/images/protfolio/project-3.webp",
+    mainDescription: "Our team implemented a robust ESG framework, improving the company's sustainability ratings and attracting socially responsible investors.",
+    overview: "A leading Consumer Packaged Goods (CPG) company aimed to enhance its environmental footprint by creating a more sustainable and transparent supply chain. The goal was to reduce waste, lower carbon emissions, and improve ethical sourcing.",
+    galleryDescription: "Through detailed analysis and strategic changes, we helped them achieve a 30% reduction in supply chain waste and a 20% decrease in carbon emissions, setting a new industry standard for sustainability.",
+    projectInfo: [
+      { label: "Clients", value: "GreenGoods Co." },
+      { label: "Budget", value: "$750K USD" },
+      { label: "Location", value: "Global" },
+      { label: "Sector", value: "Consumer Goods" },
+      { label: "Complete date", value: "Jun 10, 2025" }
+    ],
+    tags: ["Sustainability", "ESG", "Supply Chain", "Logistics"]
   },
   {
     id: 4,
     title: "AI-Powered Analytics for Healthcare",
     slug: "ai-analytics-healthcare",
     category: "Tech",
-    image: "/images/protfolio/project-4.webp"
-  },
-  // {
-  //   id: 5,
-  //   title: "Branding and Marketing for a New Startup",
-  //   slug: "branding-marketing-startup",
-  //   category: "Marketing",
-  //   image: "/images/portfolio/portfolio-05.jpg"
-  // },
-  // {
-  //   id: 6,
-  //   title: "Leadership Development Program for a Tech Corp",
-  //   slug: "leadership-development-tech",
-  //   category: "Training & Development",
-  //   image: "/images/portfolio/portfolio-06.jpg"
-  // },
+    image: "/images/protfolio/project-4.webp",
+    mainDescription: "We built an AI-powered analytics platform to help a healthcare provider derive actionable insights from patient data, improving diagnostic accuracy and operational efficiency.",
+    overview: "A healthcare organization was struggling to manage and analyze vast amounts of patient data. They needed an intelligent system to identify trends, predict patient outcomes, and optimize resource allocation.",
+    galleryDescription: "The AI platform now provides real-time analytics and predictive modeling, leading to a 15% improvement in diagnostic speed and a 20% optimization in hospital bed management.",
+    projectInfo: [
+      { label: "Clients", value: "HealthCare Innovators" },
+      { label: "Budget", value: "$1.5M USD" },
+      { label: "Location", value: "Boston, MA" },
+      { label: "Sector", value: "Healthcare & AI" },
+      { label: "Complete date", value: "Aug 30, 2025" }
+    ],
+    tags: ["AI", "Healthcare", "Data Analytics", "Tech"]
+  }
 ]
