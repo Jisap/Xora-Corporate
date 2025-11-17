@@ -1,8 +1,91 @@
-import React from 'react'
+"use client"
+
+import { blogs } from "@/app/api/data"
+import ActionButton from "@/Components/SharedComponents/ActionButton"
+import HeroSub from "@/Components/SharedComponents/HeroSub"
+import { Icon } from "@iconify/react"
+import Image from "next/image"
+import Link from "next/link"
+import React, { useState } from "react"
+
+
 
 const page = () => {
+
+  const breadcrumbLinks = [
+    { href: "/", text: "Home" },
+    { href: "/blog", text: "Blog" },
+  ];
+
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const filteredBlogs = blogs.filter((blog) =>
+    blog.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+    blog.description.toLowerCase().includes(searchTerm.toLowerCase()) 
+  );
+
   return (
-    <div>page</div>
+    <>
+      <HeroSub
+        title="Blog"
+        description="Explore our blog posts and insights on strategies and best practices."
+        breadcrumbLinks={breadcrumbLinks}
+      />
+
+      <div className="py-14 lg:py-18 xl:py-22 bg-prim-light">
+        <div className="container flex flex-col lg:flex-row items-center mx-auto lg:max-w-[--breakpoint-xl] md:max-w-[--breakpoint-md] px-4 gap-5 ">
+          <div className="lg:w-[60%] w-full">
+            {filteredBlogs.length > 0 ? (
+              filteredBlogs.map((item) => (
+                <div key={item.id} className="blog-item border-border w-full bg-white p-5 rounded-2xl group h-auto mb-5">
+                  <div className="blog-image w-full rounded-2xl overflow-hidden relative">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={250}
+                      height={250}
+                      className="w-full h-[320px] group-hover:scale-110 transition duration-300 object-cover"
+                    />
+
+                    <span className="absolute right-5 bottom-5 max-w-sm text-white font-chakrapetch bg-white/10 font-semibold backdrop-blur-sm rounded-sm text-2xl text-center p-3">
+                      {item.date}
+                    </span>
+                  </div>
+
+                  <div className="blog-contentpx-2 py-2 space-y-5">
+                    <p>
+                      <span className="border border-border px-2 rounded-sm">
+                        {item.category}
+                      </span> By{" "}
+                      {item.author}
+                    </p>
+
+                    <h4 className="font-unbounded font-medium pb-2">
+                      {item.title}
+                    </h4>
+
+                    <p className="leading-6 text-pera-dark line-clamp-3">
+                      {item.description}
+                    </p>
+
+                    <ActionButton 
+                      href={`/blog/${item.slug}`}
+                      text="Read More"
+                      variant="dark"
+                      icon="tabler:arrow-right"
+                    />
+                  </div>
+                </div>
+              ))
+            ):(
+              <div className="text-center text-gray-500 py-10">
+                No blogs found matching "{searchTerm}"
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </>
   )
 }
 

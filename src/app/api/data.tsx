@@ -194,6 +194,50 @@ export const blogs = [
     title: "Creando un Customer Engagement Significativo",
     description: "La lealtad del cliente se construye con cada interacción. Explora técnicas innovadoras para fomentar una conexión más profunda con tu audiencia.",
     slug: "creando-customer-engagement"
+  },
+  {
+    id: 4,
+    image: "/images/blog/blog-1.jpg", // Reutilizando imagen
+    name: "Post sobre Innovación Tecnológica",
+    date: "05 Nov, 2025",
+    category: "Tecnología",
+    author: "Carlos Ruiz",
+    title: "El Impacto de la IA en la Transformación Digital",
+    description: "La Inteligencia Artificial está redefiniendo los negocios. Descubre cómo la IA puede impulsar tu estrategia de transformación digital.",
+    slug: "impacto-ia-transformacion-digital"
+  },
+  {
+    id: 5,
+    image: "/images/blog/blog-2.jpg", // Reutilizando imagen
+    name: "Post sobre Liderazgo",
+    date: "10 Dic, 2025",
+    category: "Liderazgo",
+    author: "Laura Fernández",
+    title: "Desarrollando Líderes para el Futuro Empresarial",
+    description: "El liderazgo efectivo es crucial. Aprende a cultivar las habilidades necesarias para guiar a tus equipos en un entorno cambiante.",
+    slug: "desarrollo-lideres-futuro"
+  },
+  {
+    id: 6,
+    image: "/images/blog/blog-3.jpg", // Reutilizando imagen
+    name: "Post sobre Estrategia de Mercado",
+    date: "20 Ene, 2026",
+    category: "Mercado",
+    author: "Pedro Sánchez",
+    title: "Tendencias de Mercado Clave para el 2026",
+    description: "Anticípate a los cambios. Analizamos las tendencias más relevantes que moldearán el mercado en el próximo año.",
+    slug: "tendencias-mercado-2026"
+  },
+  {
+    id: 7,
+    image: "/images/blog/blog-1.jpg", // Reutilizando imagen
+    name: "Post sobre Productividad",
+    date: "15 Feb, 2026",
+    category: "Productividad",
+    author: "Ana Gómez",
+    title: "Maximizando la Productividad en Equipos Remotos",
+    description: "El trabajo remoto es una realidad. Descubre estrategias y herramientas para mantener a tus equipos productivos y conectados.",
+    slug: "productividad-equipos-remotos"
   }
 ];
 
@@ -536,6 +580,8 @@ export const ContactCardsData = [
   },
 ];
 
+
+// Amplia tanto como quieras la mainDescription y overview
 export const Portfolio = [
   {
     id: 1,
