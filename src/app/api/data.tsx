@@ -28,7 +28,7 @@ export const solutionData = [
   }
 ]
 
-// Data for companies, assuming images are in the /images/ directory
+
 export const companies = [
   {
     name: "Company 1",
@@ -91,6 +91,7 @@ export const tags2 = [
   "Lead",
   "Marketing"
 ]
+
 export const projects = [
   {
     image: "/images/projects/project-01.jpg",
@@ -534,3 +535,48 @@ export const ContactCardsData = [
     link: "/contact",
   },
 ];
+
+export const Portfolio = [
+  {
+    id: 1,
+    title: "Digital Transformation for a Financial Services Firm",
+    slug: "digital-transformation-finance",
+    category: "Business Strategy",
+    image: "/images/protfolio/project-1.webp"
+  },
+  {
+    id: 2,
+    title: "E-commerce Platform for a Retail Giant",
+    slug: "ecommerce-platform-retail",
+    category: "Customer Engagement",
+    image: "/images/protfolio/project-2.webp"
+  },
+  {
+    id: 3,
+    title: "Sustainable Supply Chain for a CPG Company",
+    slug: "sustainable-supply-chain-cpg",
+    category: "Sustainability & ESG",
+    image: "/images/protfolio/project-3.webp"
+  },
+  {
+    id: 4,
+    title: "AI-Powered Analytics for Healthcare",
+    slug: "ai-analytics-healthcare",
+    category: "Tech",
+    image: "/images/protfolio/project-4.webp"
+  },
+  // {
+  //   id: 5,
+  //   title: "Branding and Marketing for a New Startup",
+  //   slug: "branding-marketing-startup",
+  //   category: "Marketing",
+  //   image: "/images/portfolio/portfolio-05.jpg"
+  // },
+  // {
+  //   id: 6,
+  //   title: "Leadership Development Program for a Tech Corp",
+  //   slug: "leadership-development-tech",
+  //   category: "Training & Development",
+  //   image: "/images/portfolio/portfolio-06.jpg"
+  // },
+]
