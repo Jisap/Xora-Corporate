@@ -171,7 +171,8 @@ export const blogs = [
     author: "John Doe",
     title: "Estrategias de Negocios Resilientes para el 2024",
     description: "En un panorama empresarial en constante cambio, la resiliencia es una necesidad. Descubre cómo construir una estrategia que pueda resistir y prosperar.",
-    slug: "navegando-incertidumbre-2024"
+    slug: "navegando-incertidumbre-2024",
+    tags: ["Branding", "Business", "Innovate"]
   },
   {
     id: 2,
@@ -182,7 +183,8 @@ export const blogs = [
     author: "Jane Smith",
     title: "Integrando Prácticas ESG en tu Modelo de Negocio",
     description: "Las consideraciones ESG están remodelando la inversión y la lealtad del consumidor. Aprende a integrar estas prácticas de manera efectiva.",
-    slug: "futuro-verde-esg"
+    slug: "futuro-verde-esg",
+    tags: ["Consulting", "Design", "Marketing"]
   },
   {
     id: 3,
@@ -193,7 +195,8 @@ export const blogs = [
     author: "Alex Johnson",
     title: "Creando un Customer Engagement Significativo",
     description: "La lealtad del cliente se construye con cada interacción. Explora técnicas innovadoras para fomentar una conexión más profunda con tu audiencia.",
-    slug: "creando-customer-engagement"
+    slug: "creando-customer-engagement",
+    tags: ["Branding", "Business", "Innovate"]
   },
   {
     id: 4,
@@ -204,7 +207,8 @@ export const blogs = [
     author: "Carlos Ruiz",
     title: "El Impacto de la IA en la Transformación Digital",
     description: "La Inteligencia Artificial está redefiniendo los negocios. Descubre cómo la IA puede impulsar tu estrategia de transformación digital.",
-    slug: "impacto-ia-transformacion-digital"
+    slug: "impacto-ia-transformacion-digital",
+    tags: ["Branding", "Finance", "Research"]
   },
   {
     id: 5,
@@ -215,7 +219,8 @@ export const blogs = [
     author: "Laura Fernández",
     title: "Desarrollando Líderes para el Futuro Empresarial",
     description: "El liderazgo efectivo es crucial. Aprende a cultivar las habilidades necesarias para guiar a tus equipos en un entorno cambiante.",
-    slug: "desarrollo-lideres-futuro"
+    slug: "desarrollo-lideres-futuro",
+    tags: ["Finance", "Lead", "Marketing"]
   },
   {
     id: 6,
@@ -226,7 +231,8 @@ export const blogs = [
     author: "Pedro Sánchez",
     title: "Tendencias de Mercado Clave para el 2026",
     description: "Anticípate a los cambios. Analizamos las tendencias más relevantes que moldearán el mercado en el próximo año.",
-    slug: "tendencias-mercado-2026"
+    slug: "tendencias-mercado-2026",
+    tags: ["Analysis", "Growth", "Marketing"]
   },
   {
     id: 7,
@@ -237,7 +243,8 @@ export const blogs = [
     author: "Ana Gómez",
     title: "Maximizando la Productividad en Equipos Remotos",
     description: "El trabajo remoto es una realidad. Descubre estrategias y herramientas para mantener a tus equipos productivos y conectados.",
-    slug: "productividad-equipos-remotos"
+    slug: "productividad-equipos-remotos",
+    tags: ["Productivity", "Remote", "Tech"]
   }
 ];
 

@@ -42,6 +42,12 @@ const page = () => {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
 
+  const allTags = Array.from(
+    blogs.reduce((acc, blog) => {
+      blog.tags?.forEach(tag => acc.add(tag));
+      return acc;
+    }, new Set<string>())
+  );
   return (
     <>
       <HeroSub
@@ -170,6 +176,20 @@ const page = () => {
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              <div className="border-gray-100 shadow-lg bg-white p-5 rounded-xl">
+                <h4 className="text-black pb-5">
+                  Tags
+                </h4>
+
+                <div className="flex flex-wrap gap-2">
+                  {allTags.map((tag) => (
+                    <span key={tag} className="border border-border px-3 py-0.5 rounded-sm hover:bg-pera-dark hover:border-transparent hover:text-white transition-colors duration-300 cursor-pointer">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
