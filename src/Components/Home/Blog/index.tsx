@@ -1,10 +1,12 @@
 import { Icon } from '@iconify/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import  { FC } from 'react';
+import { FC } from 'react';
 import { blogs } from '@/app/api/data';
 
-const Blog:FC = () => {
+const Blog: FC = () => {
+  const [firstBlog, ...otherBlogs] = blogs;
+
   return (
     <>
       <section className='bg-light overflow-hidden py-14 lg:py-18 xl:py-22 bg-prim-light'>
@@ -20,55 +22,55 @@ const Blog:FC = () => {
           </div>
 
           <div className='blog-wrapper grid lg:grid-cols-2 gap-5'>
-            {blogs.slice(0,1).map((item) => (
-              <div key={item.id} className='blog-item w-full shadow-lg bg-white p-5 rounded-2xl group h-auto md:h-[640px]'>
+            {firstBlog && (
+              <div key={firstBlog.id} className='blog-item w-full shadow-lg bg-white p-5 rounded-2xl group h-auto md:h-[640px]'>
                 <div className='blog-image w-full rounded-2xl overflow-hidden relative'>
-                  <Image 
-                    src={item.image}
-                    alt={item.name}
+                  <Image
+                    src={firstBlog.image}
+                    alt={firstBlog.name}
                     width={250}
                     height={250}
                     className="w-full h-[320px] group-hover:scale-110 transition duration-300 object-cover"
                   />
 
-                  <span className='absolute right-5 bottom-5 max-w-sm text-white font-chakrapetch bg-white/10 font-semibold backdrop-blur-sm rounded-sm text-2xl text-center p-3'> 
-                    {item.date}
+                  <span className='absolute right-5 bottom-5 max-w-sm text-white font-chakrapetch bg-white/10 font-semibold backdrop-blur-sm rounded-sm text-2xl text-center p-3'>
+                    {firstBlog.date}
                   </span>
                 </div>
 
                 <div className='blog-content px-2 py-5 space-y-5'>
                   <p>
-                    <span className='border border-border px-2 rounded-sm'>     
-                      {item.category}
-                    </span> By {item.author}
+                    <span className='border border-border px-2 rounded-sm'>
+                      {firstBlog.category}
+                    </span> By {firstBlog.author}
                   </p>
 
                   <h4 className='font-unbounded font-medium pb-2'>
-                    {item.title}
+                    {firstBlog.title}
                   </h4>
 
                   <p className='leading-6 text-pera-dark line-clamp-3'>
-                    {item.description}
+                    {firstBlog.description}
                   </p>
 
-                  <Link href={`/blog/${item.slug}`} className='text-sm lg:text-16 w-fit rounded-full font-chakrapetch font-semibold flex gap-2 px-2 justify-center items-center tracking-wider group mt-5 lg:mt-0'>
+                  <Link href={`/blog/${firstBlog.slug}`} className='text-sm lg:text-16 w-fit rounded-full font-chakrapetch font-semibold flex gap-2 px-2 justify-center items-center tracking-wider group mt-5 lg:mt-0'>
                     Read More
-                    <Icon 
+                    <Icon
                       icon="tabler:arrow-right"
                       width="24"
                       height="24"
-                      className="bg-prim text-white rounded-full h-[35px] w-[35px] p-1.5 group-hover:-rotate-45 transition duration-300" 
+                      className="bg-prim text-white rounded-full h-[35px] w-[35px] p-1.5 group-hover:-rotate-45 transition duration-300"
                     />
                   </Link>
                 </div>
               </div>
-            ))}
+            )}
 
             <div className='grid grid-cols-1 h-auto md:h-[620px] gap-5'>
-              {blogs.slice(1).map((item) => (
+              {otherBlogs.slice(0, 2).map((item) => (
                 <div key={item.id} className='blog-item h-auto md:h-[310px] w-full flex flex-wrap md:flex-nowrap shadow-lg bg-white p-5 rounded-2xl group'>
                   <div className='blog-image w-full rounded-2xl overflow-hidden relative'>
-                    <Image 
+                    <Image
                       src={item.image}
                       alt={item.name}
                       width={250}
