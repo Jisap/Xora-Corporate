@@ -172,7 +172,9 @@ export const blogs = [
     title: "Estrategias de Negocios Resilientes para el 2024",
     description: "En un panorama empresarial en constante cambio, la resiliencia es una necesidad. Descubre cómo construir una estrategia que pueda resistir y prosperar.",
     slug: "navegando-incertidumbre-2024",
-    tags: ["Branding", "Business", "Innovate"]
+    tags: ["Branding", "Business", "Innovate"],
+    content: "En el dinámico entorno empresarial de hoy, la capacidad de una organización para anticipar, prepararse, responder y adaptarse al cambio es más crucial que nunca. Una estrategia de negocio resiliente no solo se enfoca en la supervivencia, sino en la capacidad de prosperar en medio de la incertidumbre. Esto implica diversificar los flujos de ingresos, fomentar una cultura de innovación y agilidad, y fortalecer las relaciones con clientes y proveedores.\n\nLa clave para construir resiliencia es la planificación proactiva y la flexibilidad. Las empresas deben invertir en tecnología que permita operaciones ágiles y toma de decisiones basada en datos. Además, es fundamental desarrollar el talento interno para que los equipos puedan enfrentar desafíos inesperados con creatividad y confianza. Al adoptar un enfoque holístico, las organizaciones pueden transformar la volatilidad del mercado en una ventaja competitiva.",
+    features: ["Estrategia Proactiva", "Flexibilidad Operativa", "Cultura de Innovación", "Análisis de Datos"]
   },
   {
     id: 2,
@@ -184,7 +186,9 @@ export const blogs = [
     title: "Integrando Prácticas ESG en tu Modelo de Negocio",
     description: "Las consideraciones ESG están remodelando la inversión y la lealtad del consumidor. Aprende a integrar estas prácticas de manera efectiva.",
     slug: "futuro-verde-esg",
-    tags: ["Consulting", "Design", "Marketing"]
+    tags: ["Consulting", "Design", "Marketing"],
+    content: "La integración de criterios Ambientales, Sociales y de Gobernanza (ESG) ha pasado de ser una opción a una necesidad estratégica para las empresas que buscan un crecimiento sostenible. Los inversores y consumidores modernos exigen transparencia y responsabilidad, premiando a aquellas organizaciones que demuestran un compromiso genuino con un impacto positivo. Integrar prácticas ESG no solo mejora la reputación de la marca, sino que también puede reducir riesgos operativos y atraer capital de inversión a largo plazo.\n\nPara una integración efectiva, las empresas deben comenzar por evaluar su impacto actual y establecer objetivos claros y medibles en cada una de las áreas ESG. Esto puede incluir desde la reducción de la huella de carbono y la promoción de la diversidad e inclusión, hasta la implementación de una gobernanza corporativa transparente. Comunicar estos esfuerzos de manera auténtica es fundamental para construir confianza y lealtad con todas las partes interesadas, creando un círculo virtuoso de valor compartido.",
+    features: ["Transparencia ESG", "Reducción de Huella de Carbono", "Gobernanza Corporativa", "Atracción de Inversión"]
   },
   {
     id: 3,
@@ -196,11 +200,13 @@ export const blogs = [
     title: "Creando un Customer Engagement Significativo",
     description: "La lealtad del cliente se construye con cada interacción. Explora técnicas innovadoras para fomentar una conexión más profunda con tu audiencia.",
     slug: "creando-customer-engagement",
-    tags: ["Branding", "Business", "Innovate"]
+    tags: ["Branding", "Business", "Innovate"],
+    content: "En la era digital, el 'engagement' del cliente va más allá de una simple transacción; se trata de construir una relación duradera y significativa. Las empresas que logran conectar emocionalmente con su audiencia no solo aseguran la lealtad, sino que también convierten a sus clientes en embajadores de la marca. Esto se logra a través de interacciones personalizadas, escuchando activamente sus necesidades y ofreciendo valor en cada punto de contacto.\n\nLas estrategias innovadoras para fomentar el 'engagement' incluyen la gamificación, la creación de comunidades en línea y el uso de contenido interactivo. Es crucial utilizar los datos para comprender el comportamiento del cliente y anticipar sus deseos, ofreciendo experiencias proactivas y relevantes. Al invertir en la creación de una conexión auténtica, las empresas pueden diferenciarse en un mercado saturado y construir una base de clientes sólida y comprometida.",
+    features: ["Personalización", "Gamificación", "Creación de Comunidades", "Experiencias Proactivas"]
   },
   {
     id: 4,
-    image: "/images/blog/blog-1.jpg", // Reutilizando imagen
+    image: "/images/blog/service-1.webp", 
     name: "Post sobre Innovación Tecnológica",
     date: "05 Nov, 2025",
     category: "Tecnología",
@@ -208,11 +214,13 @@ export const blogs = [
     title: "El Impacto de la IA en la Transformación Digital",
     description: "La Inteligencia Artificial está redefiniendo los negocios. Descubre cómo la IA puede impulsar tu estrategia de transformación digital.",
     slug: "impacto-ia-transformacion-digital",
-    tags: ["Branding", "Finance", "Research"]
+    tags: ["Branding", "Finance", "Research"],
+    content: "La Inteligencia Artificial (IA) se ha convertido en el motor de la transformación digital, permitiendo a las empresas automatizar procesos, obtener insights profundos a partir de los datos y crear experiencias de cliente hiper-personalizadas. Desde chatbots que mejoran el servicio al cliente hasta algoritmos que optimizan la cadena de suministro, el impacto de la IA es transversal y profundo. Las organizaciones que adoptan la IA de manera estratégica están posicionándose para liderar en sus respectivas industrias.\n\nImplementar la IA con éxito requiere más que solo tecnología; necesita una visión clara, una cultura de experimentación y un enfoque en la ética y la gobernanza de los datos. Es fundamental comenzar con casos de uso específicos que generen un valor tangible y escalar a partir de ahí. Al capacitar a los equipos y alinear la estrategia de IA con los objetivos de negocio, las empresas pueden desbloquear un potencial de innovación y eficiencia sin precedentes, redefiniendo lo que es posible.",
+    features: ["Automatización de Procesos", "Análisis Predictivo", "Experiencias Personalizadas", "Ética de Datos"]
   },
   {
     id: 5,
-    image: "/images/blog/blog-2.jpg", // Reutilizando imagen
+    image: "/images/blog/service-2.webp", 
     name: "Post sobre Liderazgo",
     date: "1 Dic, 2025",
     category: "Liderazgo",
@@ -220,19 +228,23 @@ export const blogs = [
     title: "Desarrollando Líderes para el Futuro Empresarial",
     description: "El liderazgo efectivo es crucial. Aprende a cultivar las habilidades necesarias para guiar a tus equipos en un entorno cambiante.",
     slug: "desarrollo-lideres-futuro",
-    tags: ["Finance", "Lead", "Marketing"]
+    tags: ["Finance", "Lead", "Marketing"],
+    content: "Los líderes del futuro necesitan un conjunto de habilidades diverso para navegar en un entorno empresarial complejo y en constante cambio. Más allá de la visión estratégica, se requiere inteligencia emocional, adaptabilidad y la capacidad de inspirar y empoderar a equipos diversos y, a menudo, remotos. El liderazgo ya no es jerárquico, sino colaborativo, centrado en fomentar una cultura de confianza, aprendizaje continuo y resiliencia.\n\nEl desarrollo de estos líderes comienza con la autoconciencia y el compromiso con el crecimiento personal. Las organizaciones deben invertir en programas de mentoría, coaching y formación que cultiven habilidades como la comunicación empática, el pensamiento crítico y la toma de decisiones ágil. Al preparar a la próxima generación de líderes para que guíen con propósito y humanidad, las empresas no solo aseguran su propio éxito, sino que también contribuyen a un futuro laboral más positivo y sostenible.",
+    features: ["Inteligencia Emocional", "Liderazgo Colaborativo", "Cultura de Confianza", "Toma de Decisiones Ágil"]
   },
   {
     id: 6,
-    image: "/images/blog/blog-3.jpg", // Reutilizando imagen
+    image: "/images/blog/service-3.webp", // Reutilizando imagen
     name: "Post sobre Estrategia de Mercado",
     date: "20 Nov, 2025",
     category: "Mercado",
-    author: "Pedro Sánchez",
+    author: "Perro Sánchez",
     title: "Tendencias de Mercado Clave para el 2026",
     description: "Anticípate a los cambios. Analizamos las tendencias más relevantes que moldearán el mercado en el próximo año.",
     slug: "tendencias-mercado-2026",
-    tags: ["Analysis", "Growth", "Marketing"]
+    tags: ["Analysis", "Growth", "Marketing"],
+    content: "Anticiparse a las tendencias del mercado es fundamental para mantener la relevancia y la competitividad. Para 2026, se espera que la sostenibilidad, la personalización masiva y la economía de la experiencia sean fuerzas dominantes. Los consumidores buscarán marcas que se alineen con sus valores, ofrezcan productos y servicios únicos y creen momentos memorables. Las empresas que logren integrar estas tendencias en su núcleo estratégico estarán mejor posicionadas para capturar nuevas oportunidades de crecimiento.\n\nLa tecnología seguirá siendo un catalizador clave, con avances en IA, el Internet de las Cosas (IoT) y la realidad aumentada transformando la forma en que interactuamos con las marcas. Analizar datos en tiempo real para predecir el comportamiento del consumidor y adaptar las ofertas en consecuencia será crucial. Además, la agilidad organizativa para pivotar rápidamente en respuesta a los cambios del mercado diferenciará a los líderes de los seguidores en el dinámico panorama de 2026.",
+    features: ["Sostenibilidad", "Personalización Masiva", "Economía de la Experiencia", "Análisis en Tiempo Real"]
   },
   {
     id: 7,
@@ -244,7 +256,9 @@ export const blogs = [
     title: "Maximizando la Productividad en Equipos Remotos",
     description: "El trabajo remoto es una realidad. Descubre estrategias y herramientas para mantener a tus equipos productivos y conectados.",
     slug: "productividad-equipos-remotos",
-    tags: ["Productivity", "Remote", "Tech"]
+    tags: ["Productivity", "Remote", "Tech"],
+    content: "La transición al trabajo remoto ha presentado tanto desafíos como oportunidades para la productividad. Para maximizar la eficiencia de los equipos distribuidos, es esencial establecer una comunicación clara, definir expectativas y utilizar las herramientas tecnológicas adecuadas. Plataformas de colaboración, software de gestión de proyectos y canales de comunicación asíncrona son fundamentales para mantener a todos alineados y enfocados en los objetivos comunes.\n\nMás allá de las herramientas, fomentar una cultura de confianza y autonomía es clave. Los líderes deben centrarse en los resultados en lugar de en las horas trabajadas, promoviendo un equilibrio saludable entre la vida laboral y personal. Fomentar la conexión social a través de actividades virtuales y check-ins regulares también ayuda a combatir el aislamiento y a mantener alta la moral del equipo. Con las estrategias correctas, los equipos remotos pueden ser incluso más productivos e innovadores que sus contrapartes en la oficina.",
+    features: ["Comunicación Clara", "Cultura de Confianza", "Equilibrio Laboral", "Herramientas de Colaboración"]
   }
 ];
 
