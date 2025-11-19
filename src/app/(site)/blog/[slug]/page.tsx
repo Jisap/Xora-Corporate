@@ -7,8 +7,9 @@ import { notFound } from "next/navigation"
 
 import { Icon } from "@iconify/react"
 import { use } from "react"
-import  blog1 from "../../../../../public/images/blogdetails/blog-1.webp"
-import  blog2 from "../../../../../public/images/blogdetails/blog-2.webp"
+import blog1 from "../../../../../public/images/blogdetails/blog-1.webp"
+import blog2 from "../../../../../public/images/blogdetails/blog-2.webp"
+import ActionButton from "@/Components/SharedComponents/ActionButton"
 
 
 
@@ -19,7 +20,7 @@ type Props = {
 
 const BlogDetails = ({ params }: Props) => {
 
-  const { slug } = use(params); 
+  const { slug } = use(params);
 
   const blog = blogs.find((b) => b.slug === slug);
 
@@ -48,14 +49,14 @@ const BlogDetails = ({ params }: Props) => {
       <HeroSub
         title={blog.title}
         description={blog.description}
-        breadcrumbLinks={breadcrumbLinks} 
+        breadcrumbLinks={breadcrumbLinks}
       />
 
       <section className="pb-20">
         <div className="container mx-auto lg:max-w-[--breakpoint-xl] md:max-w-[--breakpoint-md] px-4 gap-5 flex flex-col lg:flex-row">
           <div className="lg:w-[60%] w-full">
             <div className="bg-white p-5 rounded-2xl">
-              <Image 
+              <Image
                 src={blog.image}
                 alt={blog.name}
                 width={800}
@@ -75,7 +76,7 @@ const BlogDetails = ({ params }: Props) => {
                 ))}
 
                 <div className="border border-border rounded-lg p-5 bg-dark/30">
-                  <Icon 
+                  <Icon
                     icon="tabler:quote"
                     width="60"
                     height="60"
@@ -111,6 +112,55 @@ const BlogDetails = ({ params }: Props) => {
                     ))}
                   </ul>
                 )}
+                <h4 className="font-unbounded pb-5 pt-8">
+                  Leave a comment
+                </h4>
+
+                <p className="text-pera-light font-light pb-3">
+                  Your email address will not be published. Required fields are marked *
+                </p>
+
+                <form>
+                  <textarea
+                    placeholder="Enter your comment"
+                    rows={8}
+                    required
+                    className="border border-border rounded-lg p-5 mb-5"
+                  />
+
+                  <div className="grid grid-cols-1 md:grid-col-2 lg:grid-cols-3 gap-3">
+                    <input
+                      type="text"
+                      placeholder="Name"
+                      required
+                      className="border border-border px-5 h-[45px]"
+                    />
+                    <input
+                      type="text"
+                      placeholder="email"
+                      required
+                      className="border border-border px-5 h-[45px]"
+                    />
+                    <input
+                      type="text"
+                      placeholder="website"
+                      required
+                      className="border border-border px-5 h-[45px]"
+                    />
+                  </div>
+
+                  <div className="space-x-2 py-5">
+                    <input type="checkbox" />
+                    <span>Save my name, email, and website in this browser for the next time I comment.</span>
+                  </div>
+
+                  <ActionButton
+                    href="#"
+                    text="Post Comment"
+                    variant="dark"
+                    icon="tabler:arrow-right"
+                  />
+                </form>
               </div>
             </div>
           </div>
