@@ -4,12 +4,12 @@ import { blogs } from "@/app/api/data"
 import HeroSub from "@/Components/SharedComponents/HeroSub"
 import Image from "next/image"
 import { notFound } from "next/navigation"
-
 import { Icon } from "@iconify/react"
-import { use } from "react"
+import React, { use, useState } from "react"
 import blog1 from "../../../../../public/images/blogdetails/blog-1.webp"
 import blog2 from "../../../../../public/images/blogdetails/blog-2.webp"
 import ActionButton from "@/Components/SharedComponents/ActionButton"
+import Link from "next/link"
 
 
 
@@ -35,9 +35,29 @@ const BlogDetails = ({ params }: Props) => {
     { href: `/blog/${slug}`, text: blog.title },
   ];
 
+  const [searchTerm, setSearchTerm] = useState<string>("");
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+
   const recentPosts = [...blogs]
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
     .slice(0, 3);
+
+  const categories = blogs.reduce(
+    (acc, blog) => {
+      if (!acc[blog.category]) {
+        acc[blog.category] = 0;
+      }
+      acc[blog.category]++;
+      return acc;
+    }, {} as Record<string, number>
+  );
+
+  const allTags = Array.from(
+    blogs.reduce((acc, blog) => {
+      blog.tags?.forEach(tag => acc.add(tag));
+      return acc;
+    }, new Set<string>())
+  );
 
   // Extraer la primera oración del contenido para la frase importante
   const importantPhrase = blog.content.split('. ')[0] + '.';
@@ -163,9 +183,83 @@ const BlogDetails = ({ params }: Props) => {
                 </form>
               </div>
             </div>
+          </div>
+          <div className="lg:w-[40%] w-full lg:self-start lg:sticky top-20">
+            <div className="space-y-5">
+              <div className="shadow-lg border border-gray-100 bg-white p-5 rounded-xl">
+                <h4 className="text-black pb-5">Search Here</h4>
+                <form
+                  className="search-box"
+                  onSubmit={(e) => e.preventDefault()}
+                >
+                  <input
+                    type="text"
+                    placeholder="Search Here"
+                    className="p-3 border-border w-full rounded-md"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                </form>
+              </div>
 
-            <div className="lg:w-[40%] w-full">
+              <div className="border border-gray-100 shadow-lg bg-white p-5 rounded-xl">
+                <h4 className="text-black pb-5">Recent Posts</h4>
 
+                <div className="flex flex-col gap-4">
+                  {recentPosts.map((post) => (
+                    <div key={post.id} className="flex items-center gap-4 group">
+                      <Image
+                        src={post.image}
+                        alt={post.title}
+                        width={80}
+                        height={80}
+                        className="rounded-lg object-cover w-20 h-20 shrink-0"
+                      />
+
+                      <div>
+                        <p className="text-sm text-gray-500">{post.date}</p>
+
+                        <Link href={`/blog/${post.slug}`}>
+                          <h5 className="font-semibold text-black group-hover:text-prim transition-colors duration-300 line-clamp-2">{post.title}</h5>
+                        </Link>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="border border-gray-100 shadow-lg bg-white p-5 rounded-xl">
+                <h4 className="text-black pb-5">
+                  Categories
+                </h4>
+
+                <ul className="flex flex-col gap-3">
+                  <li
+                    className={`flex justify-between items-center cursor-pointer group ${!selectedCategory ? 'text-prim' : ''}`}
+                    onClick={() => setSelectedCategory(null)}
+                  >
+                    <span className="group-hover:text-prim transition-colors duration-300">Todas las Categorías</span>
+                    <span>({blogs.length})</span>
+                  </li>
+                  {Object.entries(categories).map(([category, count]) => (
+                    <li
+                      key={category}
+                      className={`flex justify-between items-center cursor-pointer group ${selectedCategory === category ? 'text-prim' : ''}`}
+                      onClick={() => setSelectedCategory(category)}
+                    >
+                      <span className="group-hover:text-prim transition-colors duration-300">{category}</span>
+                      <span>({count})</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="border-gray-100 shadow-lg bg-white p-5 rounded-xl">
+                <h4 className="text-black pb-5">Tags</h4>
+                <div className="flex flex-wrap gap-2">
+                  {allTags.map((tag) => (<span key={tag} className="border border-border px-3 py-0.5 rounded-sm hover:bg-pera-dark hover:border-transparent hover:text-white transition-colors duration-300 cursor-pointer">{tag}</span>))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
