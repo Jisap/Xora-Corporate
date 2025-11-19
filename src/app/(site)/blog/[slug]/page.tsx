@@ -163,6 +163,10 @@ const BlogDetails = ({ params }: Props) => {
                 </form>
               </div>
             </div>
+
+            <div className="lg:w-[40%] w-full">
+
+            </div>
           </div>
         </div>
       </section>
