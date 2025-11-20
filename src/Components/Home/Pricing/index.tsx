@@ -2,8 +2,10 @@
 
 import { Icon } from "@iconify/react"
 import Link from "next/link"
-import { useReducer } from "react"
+import { useReducer, useRef } from "react"
 import { projects } from '../../../app/api/data';
+import { motion, useInView } from 'framer-motion';
+import { headerVariants, gridContainerVariants, gridItemVariants } from './animations';
 
 
 interface State {
@@ -27,7 +29,11 @@ interface Action {
 
 
 const Pricing = () => {
-  
+  const headerRef = useRef(null);
+  const gridRef = useRef(null);
+  const isHeaderInView = useInView(headerRef, { once: true, amount: 0.5 });
+  const isGridInView = useInView(gridRef, { once: true, amount: 0.2 });
+
   const initialTabConfig: State = { // Estructura de datos con un tipo de plan por defecto
     planType: "Monthly",
     duration: "per month",
@@ -36,8 +42,8 @@ const Pricing = () => {
     premiumPrice: "499"
   }
 
-  function reducer(state: State, action: Action):State {
-    switch (action.type){
+  function reducer(state: State, action: Action): State {
+    switch (action.type) {
       case "Monthly":
       case "Yearly":
         return {
@@ -45,18 +51,24 @@ const Pricing = () => {
           ...action.payload,
           planType: action.type
         }
-        default:
-          return state
+      default:
+        return state
     }
   }
 
   const [tabConfig, dispatch] = useReducer(reducer, initialTabConfig)
-  
+
   return (
     <>
       <section className="overflow-hidden py-14 lg:py-18 xl:py-22 bg-prim-light">
         <div className="container mx-auto lg:max-w-[--breakpoint-xl] md:max-w-[--breakpoint-md] px-4 space-y-14">
-          <div className="text-center">
+          <motion.div
+            ref={headerRef}
+            initial="hidden"
+            animate={isHeaderInView ? "visible" : "hidden"}
+            variants={headerVariants}
+            className="text-center"
+          >
             <span className="sub-title text-14 bg-prim text-white py-1 rounded-xl relative font-chakrapetch capitalize ps-5 pe-3">
               FLEXIBLE PRICING
             </span>
@@ -67,7 +79,7 @@ const Pricing = () => {
 
             <div className="text-center pb-6">
               <div className="inline-flex items-center rounded-xl p-2 shadow-lg">
-                <button 
+                <button
                   className={`
                     py-3 px-7 rounded-xl 
                     ${tabConfig.planType === "Monthly" ? "bg-dark text-white" : "bg-transparent text-black"}
@@ -80,7 +92,7 @@ const Pricing = () => {
                       standardPrice: "249",
                       premiumPrice: "499"
                     }
-                  })}  
+                  })}
                 >
                   Monthly
                 </button>
@@ -104,14 +116,20 @@ const Pricing = () => {
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Pricing Card */}
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 mt-12">
+          <motion.div
+            ref={gridRef}
+            initial="hidden"
+            animate={isGridInView ? "visible" : "hidden"}
+            variants={gridContainerVariants}
+            className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 mt-12"
+          >
             {/* Basic Plan */}
-            <div className="bg-white pt-8 px-8 rounded-2xl shadow hover:shadow-lg transition">
+            <motion.div variants={gridItemVariants} className="bg-white pt-8 px-8 rounded-2xl shadow hover:shadow-lg">
               <h3 className="text-22 font-bold text-start text-black font-chakrapetch">
-                  Basic Plan
+                Basic Plan
               </h3>
 
               <div className="mt-4 flex items-center justify-center">
@@ -130,7 +148,7 @@ const Pricing = () => {
 
               <div className="space-y-3 text-muted pt-3">
                 <p className="text-dark flex gap-1">
-                  <Icon 
+                  <Icon
                     icon="material-symbols:check-rounded"
                     width="24"
                     height="24"
@@ -184,22 +202,22 @@ const Pricing = () => {
                 </p>
               </div>
 
-              <Link 
+              <Link
                 href="/pricing"
                 className="text-white bg-dark h-[50px] text-sm lg:text-16 w-full rounded-full font-chakrapetch font-semibold flex gap-2 ps-4 pe-2 justify-center items-center tracking-wider group my-8"
               >
                 Choose package
-                <Icon 
+                <Icon
                   icon="tabler:arrow-right"
                   width="24"
                   height="24"
                   className="bg-prim text-white rounded-full h-[35px] w-[35px] p-1.5 group-hover:-rotate-45 transition duration-300"
                 />
               </Link>
-            </div>
+            </motion.div>
 
             {/* Standard Plan */}
-            <div className="bg-white pt-8 px-8 rounded-2xl shadow hover:shadow-lg transition">
+            <motion.div variants={gridItemVariants} className="bg-white pt-8 px-8 rounded-2xl shadow hover:shadow-lg">
               <h3 className="text-22 font-bold text-start text-black font-chakrapetch">
                 Standard Plan
               </h3>
@@ -286,10 +304,10 @@ const Pricing = () => {
                   className="bg-prim text-white rounded-full h-[35px] w-[35px] p-1.5 group-hover:-rotate-45 transition duration-300"
                 />
               </Link>
-            </div>
+            </motion.div>
 
             {/* Premium Plan */}
-            <div className="bg-white pt-8 px-8 rounded-2xl shadow hover:shadow-lg transition md:col-span-2 lg:col-span-1">
+            <motion.div variants={gridItemVariants} className="bg-white pt-8 px-8 rounded-2xl shadow hover:shadow-lg md:col-span-2 lg:col-span-1">
               <h3 className="text-22 font-bold text-start text-black font-chakrapetch">
                 Premium Plan
               </h3>
@@ -376,8 +394,8 @@ const Pricing = () => {
                   className="bg-prim text-white rounded-full h-[35px] w-[35px] p-1.5 group-hover:-rotate-45 transition duration-300"
                 />
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </>
