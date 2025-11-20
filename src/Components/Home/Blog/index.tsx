@@ -1,17 +1,31 @@
+"use client"
+
 import { Icon } from '@iconify/react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 import { blogs } from '@/app/api/data';
+import { motion, useInView } from 'framer-motion';
+import { headerVariants, gridContainerVariants, gridItemVariants } from './animations';
 
 const Blog: FC = () => {
   const [firstBlog, ...otherBlogs] = blogs;
+  const headerRef = useRef(null);
+  const gridRef = useRef(null);
+  const isHeaderInView = useInView(headerRef, { once: true, amount: 0.5 });
+  const isGridInView = useInView(gridRef, { once: true, amount: 0.2 });
 
   return (
     <>
       <section className='bg-light overflow-hidden py-14 lg:py-18 xl:py-22 bg-prim-light'>
         <div className='container mx-auto lg:max-w-[--breakpoint-xl] md:max-w-[--breakpoint-md] px-4 space-y-14'>
-          <div className="blog-content text-center mb-10">
+          <motion.div
+            ref={headerRef}
+            initial="hidden"
+            animate={isHeaderInView ? "visible" : "hidden"}
+            variants={headerVariants}
+            className="blog-content text-center mb-10"
+          >
             <span className="sub-title text-14 bg-prim text-white py-1 rounded-xl relative font-chakrapetch capitalize ps-5 pe-3">
               Our Blogs
             </span>
@@ -19,11 +33,11 @@ const Blog: FC = () => {
             <h2 className="mt-4 font-chakrapetch lg:text-35 font-semibold mb-5">
               Strategies and Insights
             </h2>
-          </div>
+          </motion.div>
 
-          <div className='blog-wrapper grid lg:grid-cols-2 gap-5'>
+          <motion.div ref={gridRef} initial="hidden" animate={isGridInView ? "visible" : "hidden"} variants={gridContainerVariants} className='blog-wrapper grid lg:grid-cols-2 gap-5'>
             {firstBlog && (
-              <div key={firstBlog.id} className='blog-item w-full shadow-lg bg-white p-5 rounded-2xl group h-auto md:h-[640px]'>
+              <motion.div key={firstBlog.id} variants={gridItemVariants} className='blog-item w-full shadow-lg bg-white p-5 rounded-2xl group h-auto md:h-[640px]'>
                 <div className='blog-image w-full rounded-2xl overflow-hidden relative'>
                   <Image
                     src={firstBlog.image}
@@ -63,12 +77,12 @@ const Blog: FC = () => {
                     />
                   </Link>
                 </div>
-              </div>
+              </motion.div>
             )}
 
-            <div className='grid grid-cols-1 h-auto md:h-[620px] gap-5'>
+            <motion.div variants={gridItemVariants} className='grid grid-cols-1 h-auto md:h-[620px] gap-5'>
               {otherBlogs.slice(0, 2).map((item) => (
-                <div key={item.id} className='blog-item h-auto md:h-[310px] w-full flex flex-wrap md:flex-nowrap shadow-lg bg-white p-5 rounded-2xl group'>
+                <motion.div key={item.id} variants={gridItemVariants} className='blog-item h-auto md:h-[310px] w-full flex flex-wrap md:flex-nowrap shadow-lg bg-white p-5 rounded-2xl group'>
                   <div className='blog-image w-full rounded-2xl overflow-hidden relative'>
                     <Image
                       src={item.image}
@@ -104,10 +118,10 @@ const Blog: FC = () => {
                       />
                     </Link>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
     </>
