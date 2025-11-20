@@ -1,6 +1,6 @@
 "use client"
 
-import { FC } from "react"
+import { FC, useRef } from "react"
 import { Autoplay } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 import "swiper/css"
@@ -8,13 +8,26 @@ import "swiper/css/navigation"
 import "swiper/css/pagination"
 import Image from "next/image"
 import { companies } from "@/app/api/data"
+import { motion, useInView } from 'framer-motion'
+import { headerVariants, containerVariants, itemVariants } from './animation';
 
-const Companies:FC = () => {
+const Companies: FC = () => {
+  const headerRef = useRef(null);
+  const swiperRef = useRef(null);
+  const isHeaderInView = useInView(headerRef, { once: true, amount: 0.5 });
+  const isSwiperInView = useInView(swiperRef, { once: true, amount: 0.2 });
+
   return (
     <>
       <section className='bg-light overflow-hidden py-14 lg:py-18 xl:py-22 bg-prim-light'>
         <div className="container mx-auto lg:max-w-[--breakpoint-xl] md:max-w-[--breakpoint-md] px-4 space-y-14">
-          <div className='company-content text-center w-full'>
+          <motion.div
+            ref={headerRef}
+            initial="hidden"
+            animate={isHeaderInView ? "visible" : "hidden"}
+            variants={headerVariants}
+            className='company-content text-center w-full'
+          >
             <div>
               <span className='sub-title text-14 bg-prim text-white py-1 rounded-xl relative font-chakrapetch capitalize ps-5 pe-3'>
                 Our partners
@@ -24,10 +37,16 @@ const Companies:FC = () => {
                 Join over <span className="bg-dark text-white px-2 rounded-sm">1000+</span> Companie with Axora Here
               </h2>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="relative mt-10 swiper-fade-out">
-            <Swiper 
+          <motion.div
+            ref={swiperRef}
+            className="relative mt-10 swiper-fade-out"
+            variants={containerVariants}
+            initial="hidden"
+            animate={isSwiperInView ? "visible" : "hidden"}
+          >
+            <Swiper
               modules={[Autoplay]}
               spaceBetween={30}
               slidesPerView={5}
@@ -49,20 +68,23 @@ const Companies:FC = () => {
             >
               {companies.map((company, index) => (
                 <SwiperSlide key={index}>
-                  <div className="companies-item h-[100px] w-full bg-white shadow-xl px-8 rounded-xl flex items-center justify-center cursor-pointer">
-                    <Image 
+                  <motion.div
+                    variants={itemVariants}
+                    className="companies-item h-[100px] w-full bg-white shadow-xl px-8 rounded-xl flex items-center justify-center cursor-pointer"
+                  >
+                    <Image
                       src={company.image}
                       alt="company-image"
                       width={150}
                       height={80}
                       className="object-contain"
                     />
-                  </div>
+                  </motion.div>
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
-         </div> 
+          </motion.div>
+        </div>
       </section>
     </>
   )
