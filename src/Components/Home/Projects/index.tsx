@@ -23,7 +23,13 @@ const Projects: FC = () => {
     <>
       <section className='bg-light overflow-hidden py-14 lg:py-18 xl:py-22 bg-prim-light'>
         <div className="container mx-auto lg:max-w-[--breakpoint-xl] md:max-w-[--breakpoint-md] px-4 space-y-14">
-          <motion.div ref={headerRef} initial="hidden" animate={isHeaderInView ? "visible" : "hidden"} variants={headerVariants} className="flex flex-col items-center">
+          <motion.div
+            ref={headerRef}
+            initial="hidden"
+            animate={isHeaderInView ? "visible" : "hidden"}
+            variants={headerVariants}
+            className="flex flex-col items-center"
+          >
             <SectionHeader
               subtitle="Our partners"
               title="Breaking Boundaries, Building Dreams."
